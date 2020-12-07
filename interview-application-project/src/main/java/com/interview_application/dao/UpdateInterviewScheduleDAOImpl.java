@@ -1,4 +1,4 @@
-package interview_application.dao;
+package com.interview_application.dao;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
