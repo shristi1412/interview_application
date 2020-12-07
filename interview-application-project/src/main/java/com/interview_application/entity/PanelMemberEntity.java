@@ -27,11 +27,10 @@ public class PanelMemberEntity {
 	@OneToOne(cascade={CascadeType.ALL},
 			fetch=FetchType.EAGER, optional = false)
 	@JoinColumn(name="employeeID")
-	private String employeeID;
+	private String employeeIDpanel;
 	
 	public PanelMemberEntity() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	
 	public PanelMemberEntity(int emailID, String location, String type, String employeeID) {
@@ -39,14 +38,14 @@ public class PanelMemberEntity {
 		this.emailID = emailID;
 		this.location = location;
 		this.type = type;
-		this.employeeID = employeeID;
+		this.employeeIDpanel = employeeID;
 	}
 
 
 	@Override
 	public String toString() {
 		return "PanelMemberEntity [emailID=" + emailID + ", location=" + location + ", type=" + type + ", employeeID="
-				+ employeeID + "]";
+				+ employeeIDpanel + "]";
 	}
 
 	public int getEmailID() {
@@ -74,11 +73,11 @@ public class PanelMemberEntity {
 	}
 
 	public String getEmployeeID() {
-		return employeeID;
+		return employeeIDpanel;
 	}
 
 	public void setEmployeeID(String employeeID) {
-		this.employeeID = employeeID;
+		this.employeeIDpanel = employeeID;
 	}
 
 }
