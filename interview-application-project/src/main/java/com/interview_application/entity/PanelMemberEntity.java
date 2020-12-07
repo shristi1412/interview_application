@@ -16,7 +16,7 @@ public class PanelMemberEntity {
 	@Id
 	@GeneratedValue
 	@Column(name="emailID")
-	private int emailID;
+	private String emailID;
 	
 	@Column(name="location")
 	private String location;
@@ -33,7 +33,7 @@ public class PanelMemberEntity {
 		super();
 	}
 	
-	public PanelMemberEntity(int emailID, String location, String type, String employeeID) {
+	public PanelMemberEntity(String emailID, String location, String type, String employeeID) {
 		super();
 		this.emailID = emailID;
 		this.location = location;
@@ -48,11 +48,11 @@ public class PanelMemberEntity {
 				+ employeeIDpanel + "]";
 	}
 
-	public int getEmailID() {
+	public String getEmailID() {
 		return emailID;
 	}
 
-	public void setEmailID(int emailID) {
+	public void setEmailID(String emailID) {
 		this.emailID = emailID;
 	}
 
