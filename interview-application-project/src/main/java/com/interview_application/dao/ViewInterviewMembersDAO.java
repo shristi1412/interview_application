@@ -5,5 +5,5 @@ import com.interview_application.exceptions.CandidateNotFoundException;
 import com.interview_application.presentation.ViewInterviewMembers;
 
 public interface ViewInterviewMembersDAO {
-	CandidateEntity findById(int candidateID) throws CandidateNotFoundException;
+	CandidateEntity findById(String candidateID) throws CandidateNotFoundException;
 }

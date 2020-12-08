@@ -1,6 +1,7 @@
 package com.interview_application.dao;
 
 import javax.persistence.EntityManager;
+
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
@@ -10,7 +11,7 @@ import org.apache.logging.log4j.Logger;
 import com.interview_application.entity.CandidateEntity;
 import com.interview_application.exceptions.CandidateNotFoundException;
 
-public class ViewInterviewMembersDAOImpl implements ViewInterviewMembersDAO{
+public abstract class ViewInterviewMembersDAOImpl implements ViewInterviewMembersDAO{
 	private static Logger logger = LogManager.getLogger(GiveTechRatingDAOImpl.class.getName());	
 	private static EntityManager entityManager;
 	
@@ -27,4 +28,4 @@ public class ViewInterviewMembersDAOImpl implements ViewInterviewMembersDAO{
 	}
 	}
 
-}
+

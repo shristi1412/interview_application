@@ -1,9 +1,7 @@
 package com.interview_application.service;
 
-public class ViewInterviewSchedulerServiceImpl {
+public abstract class ViewInterviewMembersServiceImpl implements ViewInterviewMembersService {
 
-	public ViewInterviewSchedulerServiceImpl() {
-		// TODO Auto-generated constructor stub
-	}
+	
 
 }
