@@ -5,25 +5,26 @@ import org.apache.logging.log4j.Logger;
 
 import com.interview_application.dao.ViewACandidateHRDAO;
 import com.interview_application.dao.ViewACandidateHRDAOImpl;
-//import com.interview_application.dto.Candidate;
+import com.interview_application.dto.CandidateDTO;
 import com.interview_application.entity.CandidateEntity;
 import com.interview_application.exception.CandidateNotFoundException;
-import com.interview_application.presentation.ViewCandidateForHR;
-//import com.interview_application.utils.ShoppingAppUtils;
+import com.interview_application.utilities.ViewCandidateForHRUtils;
 
-public class ViewACandidateHRServiceImpl {
+public class ViewACandidateHRServiceImpl implements ViewACandidateHRService {
 
-	/*public class CandidateServiceImpl implements ViewACandidateHRService {
-
-		private static Logger logger = LogManager.getLogger(ItemServiceImpl.class.getName());
-		ViewACandidateHRDAO candidateDao = new ViewACandidateHRDAOImpl();
+	private static Logger logger = LogManager.getLogger(ViewACandidateHRServiceImpl.class.getName());
+	ViewACandidateHRDAO candidateDao = new ViewACandidateHRDAOImpl();
 		
-		public Candidate findById(int candidateID) throws CandidateNotFoundException {
-			CandidateEntity candidateEntity = candidateDao.findById(candidateID);
-			logger.info("CandidateEntity: " + candidateEntity);
-			return ShoppingAppUtils.convertItemEntityIntoItem(candidateEntity);
+	public CandidateDTO findById(String candidateID) throws CandidateNotFoundException {
+		CandidateEntity candidateEntity = candidateDao.searchById(candidateID);
+		logger.info("CandidateEntity: " + candidateEntity);
+		return ViewCandidateForHRUtils.convertCandidateEntityIntoCandidate(candidateEntity);
 		}
 
-	}*/
-
+	public CandidateDTO searchById(String candidateID) throws CandidateNotFoundException {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
+
+
