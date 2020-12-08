@@ -29,11 +29,11 @@ public class GiveTechRating {
 		}
 		return trating;
 	}*/
-	public int giveTechRating(InterviewSchedulerEntity ie) throws RatingNotFoundException{
-		logger.info("Finding Candidate for id: " + ie.getCadidateIDinter());
+	public int giveTechRating(InterviewSchedulerEntity ise) throws RatingNotFoundException{
+		logger.info("Finding Candidate for id: " + ise.getCadidateIDinter());
 		double techrating=0;
 		try {
-		if (ie.getEmployeeID()!=0 ){
+		if (ise.getEmployeeID()!=0 ){
 		int min=0;
 			int max=10;
 				 techrating=Math.random()*(max-min+1)+min;
