@@ -7,4 +7,6 @@ public interface ViewACandidateHRDAO {
 
 	CandidateEntity findById(int candidateID) throws CandidateNotFoundException;
 
+	CandidateEntity searchById(String candidateID);
+
 }

@@ -77,8 +77,8 @@ public class PanelMemberDTO {
 		return type;
 	}
 
-	public void setType(String type) {
-		this.type = type;
+	public static void setType(String type) {
+		//this.type = type;
 	}
 
 	public String getEmployeeID() {
