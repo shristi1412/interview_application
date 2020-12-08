@@ -6,21 +6,28 @@ import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
+import com.interview_application.entity.InterviewSchedulerEntity;
+
 public class PanelMemberDTO {
 
 	private String emailID;
 	private String location;
 	private String type;
-	
-	@OneToOne(cascade={CascadeType.ALL},
-			fetch=FetchType.EAGER, optional = false)
-	@JoinColumn(name="employeeID")
 	private String employeeIDpanel;
-	
+	private InterviewSchedulerEntity candidateInterview;
 	public PanelMemberDTO() {
 		super();
 	}
 	
+	public PanelMemberDTO(String emailID, String location, String type, String employeeID,InterviewSchedulerEntity candidateInterview) {
+		super();
+		this.emailID = emailID;
+		this.location = location;
+		this.type = type;
+		this.employeeIDpanel = employeeID;
+		this.candidateInterview = candidateInterview;
+	}
+
 	public PanelMemberDTO(String emailID, String location, String type, String employeeID) {
 		super();
 		this.emailID = emailID;
@@ -30,10 +37,20 @@ public class PanelMemberDTO {
 	}
 
 
-	@Override
-	public String toString() {
-		return "PanelMemberEntity [emailID=" + emailID + ", location=" + location + ", type=" + type + ", employeeID="
-				+ employeeIDpanel + "]";
+	public InterviewSchedulerEntity getCandidateInterview() {
+		return candidateInterview;
+	}
+
+	public void setCandidateInterview(InterviewSchedulerEntity candidateInterview) {
+		this.candidateInterview = candidateInterview;
+	}
+
+	public String getEmployeeIDpanel() {
+		return employeeIDpanel;
+	}
+
+	public void setEmployeeIDpanel(String employeeIDpanel) {
+		this.employeeIDpanel = employeeIDpanel;
 	}
 
 	public String getEmailID() {
@@ -66,6 +83,12 @@ public class PanelMemberDTO {
 
 	public void setEmployeeID(String employeeID) {
 		this.employeeIDpanel = employeeID;
+	}
+
+	@Override
+	public String toString() {
+		return "PanelMemberEntity [emailID=" + emailID + ", location=" + location + ", type=" + type
+				+ ", employeeIDpanel=" + employeeIDpanel + ", candidateInterview=" + candidateInterview + "]";
 	}
 
 }

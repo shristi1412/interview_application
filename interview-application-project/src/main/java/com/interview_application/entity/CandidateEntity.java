@@ -1,9 +1,13 @@
 package com.interview_application.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -29,9 +33,28 @@ public class CandidateEntity {
 	private String primaryskills;
 	@Column(name="secondaryskills")
 	private String secondaryskills;
+	
+	@ManyToOne(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+	@JoinColumn(name="interviewID")
+	private InterviewSchedulerEntity candidateInterview;
+	
 	public CandidateEntity() {
 		super();
 		// TODO Auto-generated constructor stub
+	}
+	public CandidateEntity(int employeeID, String candidatename, String location, String designation,
+			String qualification, int experience, int noticeperiod, String primaryskills, String secondaryskills, InterviewSchedulerEntity candidateInterview) {
+		super();
+		this.employeeID = employeeID;
+		this.candidatename = candidatename;
+		this.location = location;
+		this.designation = designation;
+		this.qualification = qualification;
+		this.experience = experience;
+		this.noticeperiod = noticeperiod;
+		this.primaryskills = primaryskills;
+		this.secondaryskills = secondaryskills;
+		this.candidateInterview = candidateInterview;
 	}
 	public CandidateEntity(int employeeID, String candidatename, String location, String designation,
 			String qualification, int experience, int noticeperiod, String primaryskills, String secondaryskills) {
@@ -46,13 +69,7 @@ public class CandidateEntity {
 		this.primaryskills = primaryskills;
 		this.secondaryskills = secondaryskills;
 	}
-	@Override
-	public String toString() {
-		return "CandidateEntity [employeeID=" + employeeID + ", candidatename=" + candidatename + ", location="
-				+ location + ", designation=" + designation + ", qualification=" + qualification + ", experience="
-				+ experience + ", noticeperiod=" + noticeperiod + ", primaryskills=" + primaryskills
-				+ ", secondaryskills=" + secondaryskills + "]";
-	}
+
 	public int getEmployeeID() {
 		return employeeID;
 	}
@@ -106,6 +123,19 @@ public class CandidateEntity {
 	}
 	public void setSecondaryskills(String secondaryskills) {
 		this.secondaryskills = secondaryskills;
+	}
+	public InterviewSchedulerEntity getCandidateInterview() {
+		return candidateInterview;
+	}
+	public void setCandidateInterview(InterviewSchedulerEntity candidateInterview) {
+		this.candidateInterview = candidateInterview;
+	}
+	@Override
+	public String toString() {
+		return "CandidateEntity [employeeID=" + employeeID + ", candidatename=" + candidatename + ", location="
+				+ location + ", designation=" + designation + ", qualification=" + qualification + ", experience="
+				+ experience + ", noticeperiod=" + noticeperiod + ", primaryskills=" + primaryskills
+				+ ", secondaryskills=" + secondaryskills + ", candidateInterview=" + candidateInterview + "]";
 	}
 
 	
