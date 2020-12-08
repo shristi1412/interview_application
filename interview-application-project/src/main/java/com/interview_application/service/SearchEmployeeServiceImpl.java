@@ -13,10 +13,10 @@ import com.interview_application.utilities.EmployeeUtils;
 public class SearchEmployeeServiceImpl implements SearchEmployeeService{
 
 	private static Logger logger = LogManager.getLogger(SearchEmployeeServiceImpl.class.getName());
-	SearchEmployeeDAO itemDao = new SearchEmployeeDAOImpl();
+	SearchEmployeeDAO empDao = new SearchEmployeeDAOImpl();
 	
 	public EmployeeDTO searchById(String empID) throws EmployeeNotFoundException{
-		EmployeeEntity emp = itemDao.searchById(empID);
+		EmployeeEntity emp = empDao.searchById(empID);
 		logger.info("ItemEntity: " + emp);
 		return EmployeeUtils.convertItemEntityIntoItem(emp);
 	}
