@@ -26,5 +26,3 @@ public class ViewInterviewMembersDAOImpl implements ViewInterviewMembersDAO{
 		return viewcandidateEntity;
 	}
 	}
-
-}
