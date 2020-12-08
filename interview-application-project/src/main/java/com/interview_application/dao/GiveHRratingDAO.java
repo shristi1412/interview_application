@@ -1,12 +1,8 @@
 package com.interview_application.dao;
 
 import com.interview_application.entity.CandidateEntity;
-import com.interview_application.exception.CandidateNotFoundException;
+import com.interview_application.exceptions.CandidateNotFoundException;
 
-public interface ViewACandidateHRDAO {
-
+public interface GiveHRratingDAO {
 	CandidateEntity findById(int candidateID) throws CandidateNotFoundException;
-
-	CandidateEntity searchById(String candidateID);
-
 }

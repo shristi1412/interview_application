@@ -1,11 +1,10 @@
 package com.interview_application.service;
 
-import com.interview_application.dto.Candidate;
-import com.interview_application.entity.*;
+import com.interview_application.dto.CandidateDTO;
 import com.interview_application.exception.CandidateNotFoundException;
 
 public interface ViewACandidateHRService {
 	
-	Candidate findById(int candidateID) throws CandidateNotFoundException;
+	CandidateDTO searchById(String candidateID) throws CandidateNotFoundException;
 
 }

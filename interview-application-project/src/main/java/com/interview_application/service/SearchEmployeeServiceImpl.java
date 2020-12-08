@@ -11,8 +11,8 @@ import com.interview_application.exception.EmployeeNotFoundException;
 import com.interview_application.utilities.EmployeeUtils;
 
 public class SearchEmployeeServiceImpl implements SearchEmployeeService{
-
 	private static Logger logger = LogManager.getLogger(SearchEmployeeServiceImpl.class.getName());
+	
 	SearchEmployeeDAO empDao = new SearchEmployeeDAOImpl();
 	
 	public EmployeeDTO searchById(String empID) throws EmployeeNotFoundException{

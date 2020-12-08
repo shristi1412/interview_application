@@ -1,5 +1,6 @@
 package com.interview_application.dto;
 
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.FetchType;
@@ -18,19 +19,19 @@ public class PanelMemberDTO {
 	private String type;
 	
 	private String employeeIDpanel; 
-	private InterviewSchedulerEntity candidateInterview;
+	private InterviewSchedulerEntity emailIDInterview;
 	
 	public PanelMemberDTO() {
 		super();
 	}
 	
-	public PanelMemberDTO(String emailID, String location, String type, String employeeID,InterviewSchedulerEntity candidateInterview) {
+	public PanelMemberDTO(String emailID, String location, String type, String employeeID,InterviewSchedulerEntity emailIDInterview) {
 		super();
 		this.emailID = emailID;
 		this.location = location;
 		this.type = type;
 		this.employeeIDpanel = employeeID;
-		this.candidateInterview = candidateInterview;
+		this.emailIDInterview = emailIDInterview;
 	}
 
 	public PanelMemberDTO(String emailID, String location, String type, String employeeID) {
@@ -41,12 +42,12 @@ public class PanelMemberDTO {
 		this.employeeIDpanel = employeeID;
 	}
 	
-	public InterviewSchedulerEntity getCandidateInterview() {
-		return candidateInterview;
+	public InterviewSchedulerEntity getemailIDInterview() {
+		return emailIDInterview;
 	}
 
-	public void setCandidateInterview(InterviewSchedulerEntity candidateInterview) {
-		this.candidateInterview = candidateInterview;
+	public void setemailIDInterview(InterviewSchedulerEntity emailIDInterview) {
+		this.emailIDInterview = emailIDInterview;
 	}
 
 	public String getEmployeeIDpanel() {
@@ -77,8 +78,8 @@ public class PanelMemberDTO {
 		return type;
 	}
 
-	public void setType(String type) {
-		this.type = type;
+	public static void setType(String type) {
+		//this.type = type;
 	}
 
 	public String getEmployeeID() {
@@ -92,7 +93,7 @@ public class PanelMemberDTO {
 	@Override
 	public String toString() {
 		return "PanelMemberEntity [emailID=" + emailID + ", location=" + location + ", type=" + type
-				+ ", employeeIDpanel=" + employeeIDpanel + ", candidateInterview=" + candidateInterview + "]";
+				+ ", employeeIDpanel=" + employeeIDpanel + ", emailIDInterview=" + emailIDInterview + "]";
 	}
 
 
