@@ -1,9 +1,10 @@
 package com.interview_application.dto;
 
 import javax.persistence.CascadeType;
-
+import javax.persistence.Column;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 import com.interview_application.entity.InterviewSchedulerEntity;
@@ -11,10 +12,14 @@ import com.interview_application.entity.InterviewSchedulerEntity;
 public class PanelMemberDTO {
 
 	private String emailID;
+	
 	private String location;
+	
 	private String type;
-	private String employeeIDpanel;
+	
+	private String employeeIDpanel; 
 	private InterviewSchedulerEntity candidateInterview;
+	
 	public PanelMemberDTO() {
 		super();
 	}
@@ -35,8 +40,7 @@ public class PanelMemberDTO {
 		this.type = type;
 		this.employeeIDpanel = employeeID;
 	}
-
-
+	
 	public InterviewSchedulerEntity getCandidateInterview() {
 		return candidateInterview;
 	}
@@ -90,5 +94,6 @@ public class PanelMemberDTO {
 		return "PanelMemberEntity [emailID=" + emailID + ", location=" + location + ", type=" + type
 				+ ", employeeIDpanel=" + employeeIDpanel + ", candidateInterview=" + candidateInterview + "]";
 	}
+
 
 }
