@@ -1,27 +1,15 @@
-package com.interview_application.entity;
+package com.interview_application.dto;
 
 import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
+
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
-import javax.persistence.Table;
 
-@Entity
-@Table(name="panelmember")
-public class PanelMemberEntity {
-	@Id
-	@GeneratedValue
-	@Column(name="emailID")
+public class PanelMemberDTO {
+
 	private String emailID;
-	
-	@Column(name="location")
 	private String location;
-	
-	@Column(name="type")
 	private String type;
 	
 	@OneToOne(cascade={CascadeType.ALL},
@@ -29,11 +17,11 @@ public class PanelMemberEntity {
 	@JoinColumn(name="employeeID")
 	private String employeeIDpanel;
 	
-	public PanelMemberEntity() {
+	public PanelMemberDTO() {
 		super();
 	}
 	
-	public PanelMemberEntity(String emailID, String location, String type, String employeeID) {
+	public PanelMemberDTO(String emailID, String location, String type, String employeeID) {
 		super();
 		this.emailID = emailID;
 		this.location = location;
