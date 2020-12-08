@@ -3,31 +3,28 @@ package com.interview_application.presentation;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-//import com.interview_application.dto.Item;
+//import com.interview_application.dto.Candidate;
 import com.interview_application.exception.CandidateNotFoundException;
-//import com.interview_application.ItemService;
-//import com.interview_application.ItemServiceImpl;
+import com.interview_application.service.ViewACandidateHRService;
+import com.interview_application.service.ViewACandidateHRServiceImpl;
 
 public class ViewCandidateForHR {
-
-	public class ShoppingAppController {
 		
-		/*private static Logger logger = LogManager.getLogger(ShoppingAppController.class.getName());
-		ItemService itemService = new ItemServiceImpl();
+		private static Logger logger = LogManager.getLogger(ViewCandidateForHR.class.getName());
+		ViewACandidateHRService viewcandidateService =  (ViewACandidateHRService) new ViewACandidateHRServiceImpl();
 		
-		public Item findItemById(int itemId) throws ItemNotFoundException {
-			logger.info("Finding item for id: " + itemId);
-			Item item = null;
+		/*public Candidate findCandidateById(int candidateID) throws CandidateNotFoundException {
+			logger.info("Finding candidate for id: " + candidateID);
+			Candidate candidate = null;
 			try {
-				item = itemService.findById(itemId);
+				candidate = viewcandidateService.findById(candidateID);
 			}
 			catch(Exception e) {
 				logger.error("CandidateNotFoundException: " + e);
 				throw new CandidateNotFoundException(e.getMessage());
 			}
-			return item;
+			return candidate;
 		}*/
 
-	}
 
 }
