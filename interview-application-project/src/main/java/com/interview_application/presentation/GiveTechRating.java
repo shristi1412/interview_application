@@ -15,11 +15,11 @@ public class GiveTechRating {
 	private static Logger logger = LogManager.getLogger(GiveTechRating.class.getName());
 	GiveTechRatingService techratingService =(GiveTechRatingService) new GiveTechRatingServiceImpl();
 	
-	public int giveTechRating(InterviewSchedulerEntity ise) throws RatingNotFoundException{
-		logger.info("Finding Candidate for id: " + ise.getCadidateIDinter());
+	public int giveTechRating(int candidateID) throws RatingNotFoundException{
+		logger.info("Finding Candidate for id: " + candidateID);
 		double techrating=0;
 		try {
-		if (ise.getEmployeeID()!=0 ){
+		if (candidateID!=0 ){
 		int min=0;
 			int max=10;
 				 techrating=Math.random()*(max-min+1)+min;

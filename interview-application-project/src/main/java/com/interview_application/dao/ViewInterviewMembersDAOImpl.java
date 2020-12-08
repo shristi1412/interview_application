@@ -12,7 +12,7 @@ import com.interview_application.entity.CandidateEntity;
 import com.interview_application.exceptions.CandidateNotFoundException;
 
 public abstract class ViewInterviewMembersDAOImpl implements ViewInterviewMembersDAO{
-	private static Logger logger = LogManager.getLogger(GiveTechRatingDAOImpl.class.getName());	
+	private static Logger logger = LogManager.getLogger(ViewInterviewMembersDAOImpl.class.getName());	
 	private static EntityManager entityManager;
 	
 	static {
@@ -27,8 +27,8 @@ public abstract class ViewInterviewMembersDAOImpl implements ViewInterviewMember
 		return viewcandidateEntity;
 	}
 	}
-<<<<<<< HEAD
+	
 
 
-=======
->>>>>>> refs/remotes/origin/main
+
+

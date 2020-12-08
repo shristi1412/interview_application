@@ -7,6 +7,8 @@ import org.apache.logging.log4j.Logger;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import com.interview_application.exception.RatingNotFoundException;
+
 import SearchEmployee.SearchEmployee;
 
 public class GiveTechRatingTest {
@@ -21,7 +23,11 @@ public class GiveTechRatingTest {
 	}
 
 	@Test
-	public void test() {
+	public void testGiveTechRating() throws RatingNotFoundException {
+		logger.info("[START] testGiveTechRating()");
+		//assertNotNull("Rating Given",givetechrating.giveTechRating(10));
+		assertEquals(5,givetechrating.giveTechRating(10), 0.0);
+		logger.info("[END] testGiveTechRating()");
 		
 	}
 
