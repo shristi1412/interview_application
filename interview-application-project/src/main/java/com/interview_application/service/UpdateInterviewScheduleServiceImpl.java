@@ -19,14 +19,14 @@ public class UpdateInterviewScheduleServiceImpl implements UpdateInterviewSchedu
 	
 	public InterviewSchedulerEntity findById(int interviewID) throws InterviewNotFoundException {
 		InterviewSchedulerEntity interviewSchedulerEntity = interviewDao.findById(interviewID);
-		logger.info("InterviewSchedulerEntity: " + interviewDao);
-		return UpdateInterviewScheduleUtils.convertItemEntityIntoItem(interviewSchedulerEntity);
+		logger.info("InterviewSchedulerEntity: " + interviewSchedulerEntity);
+		return UpdateInterviewScheduleUtils.convertInterviewSchedulerEntityIntoInterviewSchedulerDTO(interviewSchedulerEntity);
 	}
 	
 	public InterviewSchedulerEntity findById(int techrating , int hrrating ) throws RatingNotFoundException {
 		InterviewSchedulerEntity interviewSchedulerEntity1 = interviewDao.findById(techrating,hrrating);
-		logger.info("InterviewSchedulerEntity: " + interviewDao);
-		return UpdateInterviewScheduleUtils.convertItemEntityIntoItem(interviewSchedulerEntity1);
+		logger.info("InterviewSchedulerEntity: " + interviewSchedulerEntity1);
+		return UpdateInterviewScheduleUtils.convertInterviewSchedulerEntityIntoInterviewSchedulerDTO(interviewSchedulerEntity1);
 	}
 	
 }

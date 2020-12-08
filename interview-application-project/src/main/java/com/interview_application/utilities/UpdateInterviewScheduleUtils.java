@@ -5,10 +5,10 @@ import com.interview_application.entity.InterviewSchedulerEntity;
 
 public class UpdateInterviewScheduleUtils {
 	
-	public static InterviewSchedulerEntity convertItemIntoItemEntity(InterviewSchedulerDTO interview) {
+	public static InterviewSchedulerEntity convertInterviewSchedulerEntityIntoInterviewSchedulerDTO(InterviewSchedulerEntity interview) {
 		return new InterviewSchedulerEntity(interview.getInterviewID(),interview.getTechrating(),interview.getHrrating());
 	}
-	public static InterviewSchedulerDTO convertItemEntityIntoItem(InterviewSchedulerEntity interview) {
+	public static InterviewSchedulerDTO convertInterviewSchedulerDTOIntoInterviewSchedulerEntity(InterviewSchedulerDTO interview) {
 		return new InterviewSchedulerDTO(interview.getInterviewID(),interview.getTechrating(),interview.getHrrating());
 	}
 }
