@@ -1,39 +1,17 @@
-package com.interview_application.entity;
+package com.interview_application.dto;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-@Entity
-@Table(name="candidate")
-public class CandidateEntity {
-	@Id
-	@GeneratedValue
-	@Column(name="candidateID")
+public class Candidate {
 	private int candidateID;
-	@Column(name="candidatename")
 	private String candidatename;
-	@Column(name="location")
 	private String location;
-	@Column(name="designation")
 	private String designation;
-	@Column(name="qualification")
 	private String qualification;
-	@Column(name="experience")
 	private int experience;
-	@Column(name="noticeperiod")
 	private int noticeperiod;
-	@Column(name="primaryskills")
 	private String primaryskills;
-	@Column(name="secondaryskills")
 	private String secondaryskills;
-	public CandidateEntity() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-	public CandidateEntity(int candidateID, String candidatename, String location, String designation,
+
+	public Candidate(int candidateID, String candidatename, String location, String designation,
 			String qualification, int experience, int noticeperiod, String primaryskills, String secondaryskills) {
 		super();
 		this.candidateID = candidateID;
@@ -46,6 +24,7 @@ public class CandidateEntity {
 		this.primaryskills = primaryskills;
 		this.secondaryskills = secondaryskills;
 	}
+	
 	@Override
 	public String toString() {
 		return "CandidateEntity [candidateID=" + candidateID + ", candidatename=" + candidatename + ", location="
