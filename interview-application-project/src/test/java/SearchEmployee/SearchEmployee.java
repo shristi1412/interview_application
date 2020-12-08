@@ -19,16 +19,33 @@ public class SearchEmployee {
 		searchEmployeeController = new SearchEmployeeController();
 	}
 	@Test
-	public void testSimple() throws EmployeeNotFoundException{
+	public void testIDSimple() throws EmployeeNotFoundException{
 		logger.info("[START] testItemSearchSuccess()");
 		assertNotNull("Item Found", searchEmployeeController.searchById("emp85015"));
 		logger.info("[END] testItemSearchSuccess()");
 	}
 	@Test
-	public void testIncorrect() throws EmployeeNotFoundException{
+	public void testIDIncorrect() throws EmployeeNotFoundException{
 		logger.info("[START] testItemSearchSuccess()");
 		assertNotNull("Item Found", searchEmployeeController.searchById("emp00000"));
 		logger.info("[END] testItemSearchSuccess()");
 	}
-
+	@Test
+	public void testNameSimple() throws EmployeeNotFoundException{
+		logger.info("[START] testItemSearchSuccess()");
+		assertNotNull("Item Found", searchEmployeeController.searchByName("Ramesh"));
+		logger.info("[END] testItemSearchSuccess()");
+	}
+	@Test
+	public void testNameIncorrect() throws EmployeeNotFoundException{
+		logger.info("[START] testItemSearchSuccess()");
+		assertNotNull("Item Found", searchEmployeeController.searchByName("Atul"));
+		logger.info("[END] testItemSearchSuccess()");
+	}
+	@Test
+	public void testIDBlank() throws EmployeeNotFoundException{
+		logger.info("[START] testItemSearchSuccess()");
+		assertNotNull("Item Found", searchEmployeeController.searchById("eMp85015"));
+		logger.info("[END] testItemSearchSuccess()");
+	}
 }
