@@ -16,7 +16,7 @@ public class CandidateEntity {
 	@Id
 	@GeneratedValue
 	@Column(name="candidateID")
-	private int employeeID;
+	private int candidateID;
 	@Column(name="candidatename")
 	private String candidatename;
 	@Column(name="location")
@@ -42,6 +42,7 @@ public class CandidateEntity {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+<<<<<<< HEAD
 	public CandidateEntity(int employeeID, String candidatename, String location, String designation,
 			String qualification, int experience, int noticeperiod, String primaryskills, String secondaryskills, InterviewSchedulerEntity candidateInterview) {
 		super();
@@ -57,9 +58,12 @@ public class CandidateEntity {
 		this.candidateInterview = candidateInterview;
 	}
 	public CandidateEntity(int employeeID, String candidatename, String location, String designation,
+=======
+	public CandidateEntity(int candidateID, String candidatename, String location, String designation,
+>>>>>>> branch 'master' of https://github.com/shristi1412/interview_application
 			String qualification, int experience, int noticeperiod, String primaryskills, String secondaryskills) {
 		super();
-		this.employeeID = employeeID;
+		this.candidateID = candidateID;
 		this.candidatename = candidatename;
 		this.location = location;
 		this.designation = designation;
@@ -69,12 +73,24 @@ public class CandidateEntity {
 		this.primaryskills = primaryskills;
 		this.secondaryskills = secondaryskills;
 	}
+<<<<<<< HEAD
 
 	public int getEmployeeID() {
 		return employeeID;
+=======
+	@Override
+	public String toString() {
+		return "CandidateEntity [candidateID=" + candidateID + ", candidatename=" + candidatename + ", location="
+				+ location + ", designation=" + designation + ", qualification=" + qualification + ", experience="
+				+ experience + ", noticeperiod=" + noticeperiod + ", primaryskills=" + primaryskills
+				+ ", secondaryskills=" + secondaryskills + "]";
 	}
-	public void setEmployeeID(int employeeID) {
-		this.employeeID = employeeID;
+	public int getCandidateID() {
+		return candidateID;
+>>>>>>> branch 'master' of https://github.com/shristi1412/interview_application
+	}
+	public void setCandidateID(int candidateID) {
+		this.candidateID = candidateID;
 	}
 	public String getCandidatename() {
 		return candidatename;
