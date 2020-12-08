@@ -32,6 +32,14 @@ public class InterviewSchedulerDTO {
 		this.cadidateIDinter = cadidateIDinter;
 		this.emailIDinter = emailIDinter;
 	}
+	
+	
+	public InterviewSchedulerDTO(int interviewID, int techrating, int hrrating) {
+		super();
+		this.interviewID = interviewID;
+		this.techrating = techrating;
+		this.hrrating = hrrating;
+	}
 	@Override
 	public String toString() {
 		return "InterviewSchedulerEntity [interviewID=" + interviewID + ", techrating=" + techrating + ", hrrating="

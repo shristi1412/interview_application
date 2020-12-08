@@ -32,19 +32,19 @@ public class PanelMemberEntity {
 	private String employeeIDpanel;
 	@ManyToOne(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
 	@JoinColumn(name="interviewID")
-	private InterviewSchedulerEntity candidateInterview;
+	private InterviewSchedulerEntity emailIDInterview;
 	
 	public PanelMemberEntity() {
 		super();
 	}
 	
-	public PanelMemberEntity(String emailID, String location, String type, String employeeID,InterviewSchedulerEntity candidateInterview) {
+	public PanelMemberEntity(String emailID, String location, String type, String employeeID,InterviewSchedulerEntity emailIDInterview) {
 		super();
 		this.emailID = emailID;
 		this.location = location;
 		this.type = type;
 		this.employeeIDpanel = employeeID;
-		this.candidateInterview = candidateInterview;
+		this.emailIDInterview = emailIDInterview;
 	}
 
 	public PanelMemberEntity(String emailID, String location, String type, String employeeID) {
@@ -55,12 +55,12 @@ public class PanelMemberEntity {
 		this.employeeIDpanel = employeeID;
 	}
 	
-	public InterviewSchedulerEntity getCandidateInterview() {
-		return candidateInterview;
+	public InterviewSchedulerEntity getemailIDInterview() {
+		return emailIDInterview;
 	}
 
-	public void setCandidateInterview(InterviewSchedulerEntity candidateInterview) {
-		this.candidateInterview = candidateInterview;
+	public void setemailIDInterview(InterviewSchedulerEntity candidateInterview) {
+		this.emailIDInterview = candidateInterview;
 	}
 
 	public String getEmployeeIDpanel() {
@@ -106,7 +106,7 @@ public class PanelMemberEntity {
 	@Override
 	public String toString() {
 		return "PanelMemberEntity [emailID=" + emailID + ", location=" + location + ", type=" + type
-				+ ", employeeIDpanel=" + employeeIDpanel + ", candidateInterview=" + candidateInterview + "]";
+				+ ", employeeIDpanel=" + employeeIDpanel + ", emailIDInterview=" + emailIDInterview + "]";
 	}
 
 

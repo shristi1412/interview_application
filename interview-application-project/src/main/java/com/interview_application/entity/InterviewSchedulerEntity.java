@@ -39,6 +39,16 @@ public class InterviewSchedulerEntity {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
+	
+	public InterviewSchedulerEntity(int interviewID, int techrating, int hrrating) {
+		super();
+		this.interviewID = interviewID;
+		this.techrating = techrating;
+		this.hrrating = hrrating;
+	}
+
+
 	public InterviewSchedulerEntity(int interviewID, int techrating, int hrrating, int location, int finalstatus,
 			Set<EmployeeEntity> employeeIDinter, Set<CandidateEntity> cadidateIDinter,
 			Set<PanelMemberEntity> emailIDinter) {

@@ -12,8 +12,18 @@
 		<properties>
 			<property name="hibernate.connection.url" value="jdbc:postgresql://localhost/interviewTracking" />
 			<property name="hibernate.connection.driver_class" value="org.postgresql.Driver" />
+<<<<<<< HEAD
+=======
+			<property name="hibernate.connection.username" value="InterviewTracking" />
+			<property name="hibernate.connection.password" value="12345" />
+
+>>>>>>> branch 'main' of https://github.com/shristi1412/interview_application
 			<property name="hibernate.connection.username" value="postgres" />
+<<<<<<< HEAD
 			<property name="hibernate.connection.password" value="root" />
+=======
+			<property name="hibernate.connection.password" value="user123" />
+>>>>>>> branch 'main' of https://github.com/shristi1412/interview_application
 			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
 			<property name="hibernate.show_sql" value="true" />
 			<property name="hibernate.format_sql" value="true" />
