@@ -8,7 +8,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.interview_application.entity.CandidateEntity;
-import com.interview_application.exceptions.CandidateNotFoundException;
+import com.interview_application.exception.CandidateNotFoundException;
 
 public class ViewInterviewMembersDAOImpl implements ViewInterviewMembersDAO{
 	private static Logger logger = LogManager.getLogger(GiveTechRatingDAOImpl.class.getName());	
