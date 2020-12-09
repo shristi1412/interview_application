@@ -21,11 +21,11 @@ public class UpdateInterviewScheduleDAOImpl implements UpdateInterviewScheduleDA
 		entityManager = entityManagerFactory.createEntityManager();
 	}
 	
-	public InterviewSchedulerEntity findById(int interviewID) throws InterviewNotFoundException {
-		InterviewSchedulerEntity interviewSchedulerEntity = entityManager.find(InterviewSchedulerEntity.class, interviewID);
+	public InterviewSchedulerEntity findById(String interviewId) throws InterviewNotFoundException {
+		InterviewSchedulerEntity interviewSchedulerEntity = entityManager.find(InterviewSchedulerEntity.class, interviewId);
 		logger.info("Database returned InterviewSchedulerEntity: " + interviewSchedulerEntity);
 		if(interviewSchedulerEntity==null)
-			throw new InterviewNotFoundException("InterviewId: " + interviewID);
+			throw new InterviewNotFoundException("InterviewId: " + interviewId);
 		return interviewSchedulerEntity;
 	}
 		

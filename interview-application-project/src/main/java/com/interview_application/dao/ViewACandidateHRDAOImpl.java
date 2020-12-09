@@ -27,9 +27,5 @@ public class ViewACandidateHRDAOImpl implements ViewACandidateHRDAO {
 				throw new CandidateNotFoundException("CandidateId: " + candidateID);
 			return viewcandidateEntity;
 		}
-		public CandidateEntity searchById(String candidateID) {
-			// TODO Auto-generated method stub
-			return null;
-		}
 
 }

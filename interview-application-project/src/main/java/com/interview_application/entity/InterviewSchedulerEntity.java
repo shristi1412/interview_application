@@ -43,8 +43,33 @@ public class InterviewSchedulerEntity {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+<<<<<<< HEAD
 	public InterviewSchedulerEntity(String interviewid, int techrating, int hrrating, int location, int finalstatus,
 			EmployeeEntity employeeIDinter, CandidateEntity candidateIDinter, Set<PanelMemberEntity> emailIDinter) {
+=======
+	
+	
+	
+	
+	public InterviewSchedulerEntity(int interviewID, int techrating, int hrrating) {
+		super();
+		this.interviewID = interviewID;
+		this.techrating = techrating;
+		this.hrrating = hrrating;
+	}
+
+public InterviewSchedulerEntity(int interviewID) {
+		super();
+		this.interviewID = interviewID;
+	}
+
+
+
+
+	public InterviewSchedulerEntity(int interviewID, int techrating, int hrrating, int location, int finalstatus,
+			Set<EmployeeEntity> employeeIDinter, Set<CandidateEntity> cadidateIDinter,
+			Set<PanelMemberEntity> emailIDinter) {
+>>>>>>> 023024268aa7d3577e94af6677f363ee585181b6
 		super();
 		this.interviewid = interviewid;
 		this.techrating = techrating;
