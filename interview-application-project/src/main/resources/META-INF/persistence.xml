@@ -12,7 +12,7 @@
 			<property name="hibernate.connection.url" value="jdbc:postgresql://localhost/InterviewTracking" />
 			<property name="hibernate.connection.driver_class" value="org.postgresql.Driver" />
 			<property name="hibernate.connection.username" value="InterviewTracking" />
-			<property name="hibernate.connection.password" value="12345" />
+			<property name="hibernate.connection.password" value="gopal" />
 
 			<property name="hibernate.connection.username" value="postgres" />
 			<property name="hibernate.connection.password" value="user123" />

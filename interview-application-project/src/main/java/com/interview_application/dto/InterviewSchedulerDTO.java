@@ -34,6 +34,12 @@ public class InterviewSchedulerDTO {
 	}
 	
 	
+	
+	
+	public InterviewSchedulerDTO(int interviewID) {
+		super();
+		this.interviewID = interviewID;
+	}
 	public InterviewSchedulerDTO(int interviewID, int techrating, int hrrating) {
 		super();
 		this.interviewID = interviewID;

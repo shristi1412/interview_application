@@ -41,12 +41,21 @@ public class InterviewSchedulerEntity {
 	}
 	
 	
+	
+	
 	public InterviewSchedulerEntity(int interviewID, int techrating, int hrrating) {
 		super();
 		this.interviewID = interviewID;
 		this.techrating = techrating;
 		this.hrrating = hrrating;
 	}
+
+public InterviewSchedulerEntity(int interviewID) {
+		super();
+		this.interviewID = interviewID;
+	}
+
+
 
 
 	public InterviewSchedulerEntity(int interviewID, int techrating, int hrrating, int location, int finalstatus,
