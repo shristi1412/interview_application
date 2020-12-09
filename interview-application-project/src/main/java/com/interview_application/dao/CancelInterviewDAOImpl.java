@@ -16,7 +16,7 @@ public class CancelInterviewDAOImpl implements CancelInterviewDAO{
 	private static EntityManager entityManager;
 	
 	static {
-		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("ShopCartAppPU");
+		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("InterviewTracking");
 		entityManager = entityManagerFactory.createEntityManager();
 	}
 	

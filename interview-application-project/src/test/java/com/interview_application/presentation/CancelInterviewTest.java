@@ -7,13 +7,10 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.BeforeClass;
 import org.junit.Test;
-
-import com.interview_application.exception.RatingNotFoundException;
 import com.interview_application.exception.InterviewNotFoundException;
-import com.interview_application.presentation.UpdateInterviewSchedule;
+import com.interview_application.presentation.CancelInterview;
 
-
-public class UpdateInterviewScheduleTest {
+public class CancelInterviewTest {
 	
 	private static UpdateInterviewSchedule  updateInterviewSchedule ;
 	private static Logger logger;
@@ -25,7 +22,7 @@ public class UpdateInterviewScheduleTest {
 	@Test
 	public void testInterviewSearchSuccess() throws InterviewNotFoundException {
 		logger.info("[START] testInterviewSearchSuccess()");
-		assertNotNull("Interview Found", updateInterviewSchedule.findItemById("int1"));
+		assertNotNull("Interview Found", updateInterviewSchedule.findItemById(""));
 		logger.info("[END] testInterviewSearchSuccess()");
 	}
 	
@@ -35,18 +32,5 @@ public class UpdateInterviewScheduleTest {
 		updateInterviewSchedule.findItemById("int1");
 		logger.info("[END] testCandidateSearchFailed()");
 	}
-	
-	/*@Test
-	public void testRatingSuccess() throws RatingNotFoundException {
-		logger.info("[START] testRatingSuccess()");
-		assertNotNull("Rating Found", updateInterviewSchedule.findItemById(1,0));
-		logger.info("[END] testRatingSuccess()");
-	}
-	
-	@Test(expected = InterviewNotFoundException.class)
-	public void testInterviewSearchFailed() throws InterviewNotFoundException {
-		logger.info("[START] testIntervewSearchFailed()");
-		updateInterviewSchedule.findItemById(1);
-		logger.info("[END] testCandidateSearchFailed()");
-	}*/
+
 }
