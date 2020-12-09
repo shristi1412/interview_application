@@ -1,33 +1,51 @@
 package com.interview_application.dto;
 
+import com.interview_application.entity.InterviewSchedulerEntity;
+
 public class Candidate {
-	private String candidateid;
-private String candidatename;
+	private int candidateid;
+	private String candidatename;
+	private String location;
 	private String designation;
-	private String primaryskill;
-	private String secondaryskills;
+	private String qualification;
 	private int experience;
 	private int noticeperiod;
-	private String qualification;
-	private String location;
-	
-	public Candidate(String string, String string2, String string3, String string4, String string5, int i, int j, String string6, String string7, String string8) {
+	private String primaryskills;
+	private String secondaryskills;
+	private InterviewSchedulerEntity interviewSchedulerEntity;
+
+
+	public Candidate(int candidateid, String candidatename, String location, String qualification, String designation,
+			 int experience, String primaryskills, String secondaryskills, int noticeperiod, InterviewSchedulerEntity interviewSchedulerEntity) {
 		super();
+		this.candidateid = candidateid;
+		this.candidatename = candidatename;
+		this.location = location;
+		this.qualification = qualification;
+		this.designation = designation;
+		this.experience = experience;
+		this.primaryskills = primaryskills;
+		this.secondaryskills = secondaryskills;
+		this.noticeperiod = noticeperiod;
+		this.interviewSchedulerEntity = interviewSchedulerEntity;
 	}
 	
-	public Candidate(String candidatename,String location,String qualification, int experience, String primaryskill, String secondaryskills,int noticeperiod, String designation) {
-		super();
-				this.candidatename=candidatename;
-				this.designation=designation;
-				this.location=location;
-				this.primaryskill=primaryskill;
-				this.secondaryskills=secondaryskills;
-				this.experience=experience;
-				this.noticeperiod=noticeperiod;
-				this.qualification=qualification;
-				
-	}
 	
+	@Override
+	public String toString() {
+		return "Candidate [candidateid=" + candidateid + ", candidatename=" + candidatename + ", location=" + location
+				+ ", qualification=" + qualification + ", designation=" + designation + ", experience=" + experience
+				+ ", primaryskills=" + primaryskills + ", secondaryskills=" + secondaryskills + ", noticeperiod="
+				+ noticeperiod + ", interviewSchedulerEntity=" + interviewSchedulerEntity + "]";
+	}
+
+
+	public int getCandidateid() {
+		return candidateid;
+	}
+	public void setCandidateid(int candidateid) {
+		this.candidateid = candidateid;
+	}
 	public String getCandidatename() {
 		return candidatename;
 	}
@@ -40,17 +58,17 @@ private String candidatename;
 	public void setLocation(String location) {
 		this.location = location;
 	}
-	public String getQualification() {
-		return qualification;
-	}
-	public void setQualification(String qualification) {
-		this.qualification = qualification;
-	}
 	public String getDesignation() {
 		return designation;
 	}
 	public void setDesignation(String designation) {
 		this.designation = designation;
+	}
+	public String getQualification() {
+		return qualification;
+	}
+	public void setQualification(String qualification) {
+		this.qualification = qualification;
 	}
 	public int getExperience() {
 		return experience;
@@ -58,11 +76,17 @@ private String candidatename;
 	public void setExperience(int experience) {
 		this.experience = experience;
 	}
-	public String getPrimaryskill() {
-		return primaryskill;
+	public int getNoticeperiod() {
+		return noticeperiod;
 	}
-	public void setPrimaryskill(String primaryskill) {
-		this.primaryskill = primaryskill;
+	public void setNoticeperiod(int noticeperiod) {
+		this.noticeperiod = noticeperiod;
+	}
+	public String getPrimaryskills() {
+		return primaryskills;
+	}
+	public void setPrimaryskills(String primaryskills) {
+		this.primaryskills = primaryskills;
 	}
 	public String getSecondaryskills() {
 		return secondaryskills;
@@ -70,32 +94,14 @@ private String candidatename;
 	public void setSecondaryskills(String secondaryskills) {
 		this.secondaryskills = secondaryskills;
 	}
-	public int getNoticeperiod() {
-		return noticeperiod;
-	}
-	public void setNoticeperiod(int noticeperiod) {
-		this.noticeperiod = noticeperiod;
-	}
-	public String getCandidateid() {
-		return candidateid;
+
+	public InterviewSchedulerEntity getInterviewSchedulerEntity() {
+		return interviewSchedulerEntity;
 	}
 
-	public void setCandidateid(String candidateid) {
-		this.candidateid = candidateid;
+	public void setInterviewSchedulerEntity(InterviewSchedulerEntity interviewSchedulerEntity) {
+		this.interviewSchedulerEntity = interviewSchedulerEntity;
 	}
 	
-	@Override
-	public String toString() {
-		return "CandidateEntity [candidateID=" + candidateid + ", candidatename=" + candidatename + ", location="
-				+ location + ", designation=" + designation + ", qualification=" + qualification + ", experience="
-				+ experience + ", noticeperiod=" + noticeperiod + ", primaryskills=" + primaryskill
-				+ ", secondaryskills=" + secondaryskills;
-	}
-
-	public Object getInterviewSchedulerEntity() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
-	}
+	
+}

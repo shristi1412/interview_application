@@ -12,7 +12,7 @@ import com.interview_application.entity.InterviewSchedulerEntity;
 
 public class PanelMemberDTO {
 
-	private String emailid;
+	private int panelid;
 	
 	private String location;
 	
@@ -23,21 +23,21 @@ public class PanelMemberDTO {
 		super();
 	}
 	
-	public PanelMemberDTO(String emailid, String location, String type) {
+	public PanelMemberDTO(int panelid, String location, String type) {
 		super();
-		this.emailid = emailid;
+		this.panelid = panelid;
 		this.location = location;
 		this.type = type;
 		
 	}
 
 
-	public String getEmailid() {
-		return emailid;
+	public int getPanelid() {
+		return panelid;
 	}
 
-	public void setEmailid(String emailid) {
-		this.emailid = emailid;
+	public void setPanelid(int panelid) {
+		this.panelid = panelid;
 	}
 
 	public String getLocation() {
@@ -59,7 +59,7 @@ public class PanelMemberDTO {
 
 	@Override
 	public String toString() {
-		return "PanelMemberEntity [emailID=" + emailid + ", location=" + location + ", type=" + type
+		return "PanelMemberEntity [panelID=" + panelid + ", location=" + location + ", type=" + type
 				+  "]";
 	}
 

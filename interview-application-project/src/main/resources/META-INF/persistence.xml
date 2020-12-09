@@ -9,15 +9,44 @@
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
 		<class>com.interview-application.entity.EmployeeEntity</class>
+<<<<<<< HEAD
 		<class>com.interview-application.entity.InterviewSchedulerEntity</class>
 		<class>com.interview-application.entity.CandiadteEntity</class>
 		<class>com.interview-application.entity.PanelMemberEntity</class>
 
 		<properties>
 			<property name="hibernate.connection.url" value="jdbc:postgresql://localhost/interviewtracking" />
+=======
+		<class>com.interview-application.entity.CandidateEntity</class>
+		<class>com.interview-application.entity.InterviewSchedulerEntity</class>
+
+		<class>com.interview-application.entity.EmployeeEntity</class>
+		<class>com.interview-application.entity.PanelMemberEntity</class>
+
+		<properties>
+
+			<property name="hibernate.connection.url" value="jdbc:postgresql://localhost/interviewTracking" />
+
+			<property name="hibernate.connection.url" value="jdbc:postgresql://localhost/interviewtracking" />
+
+			<property name="hibernate.connection.url" value="jdbc:postgresql://localhost/InterviewTracking" />
+
+>>>>>>> db6fd83cca796b89527462f3d5d32e522f2dbc68
 			<property name="hibernate.connection.driver_class" value="org.postgresql.Driver" />
 			<property name="hibernate.connection.username" value="postgres" />
+<<<<<<< HEAD
 			<property name="hibernate.connection.password" value="gopal" />
+=======
+
+			<property name="hibernate.connection.password" value="12345" />
+
+			<property name="hibernate.connection.password" value="root" />
+			
+			<property name="hibernate.connection.password" value="ohmygod" />
+
+			<property name="hibernate.connection.password" value="gopal" />
+
+>>>>>>> db6fd83cca796b89527462f3d5d32e522f2dbc68
 			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
 			<property name="hibernate.show_sql" value="true" />
 			<property name="hibernate.format_sql" value="true" />

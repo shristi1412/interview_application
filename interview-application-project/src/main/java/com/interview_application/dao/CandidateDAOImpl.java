@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -12,6 +13,8 @@ import org.apache.logging.log4j.Logger;
 
 import com.interview_application.entity.CandidateEntity;
 import com.interview_application.exception.CandidateNotFoundException;
+
+import com.interview_application.exception.NullValueFoundException;
 
 
 public class CandidateDAOImpl implements CandidateDAO{
@@ -25,12 +28,7 @@ public class CandidateDAOImpl implements CandidateDAO{
 	}
 	
 	
-  /*  public List<AddCandidateEntity> getAllCandidates() {
-        List<AddCandidateEntity> candidates = entityManager.createQuery("Select a From AddCandidateEntity a", AddCandidateEntity.class).getResultList();
-        return candidates;
-    }*/
- 
-	public void addCandidate(CandidateEntity candidate)throws CandidateNotFoundException {
+   public void addCandidate(CandidateEntity candidate)throws CandidateNotFoundException {
 		
 			entityManager.getTransaction().begin();
 			entityManager.merge(candidate);
@@ -39,16 +37,39 @@ public class CandidateDAOImpl implements CandidateDAO{
 		
 	}
 	
-	public CandidateEntity findByCandidateID(int candidateid) throws CandidateNotFoundException {
+   
+   public CandidateEntity findByCandidateID(String candidateid) throws CandidateNotFoundException {
 		
 		CandidateEntity candidateEntity = entityManager.find(CandidateEntity.class, candidateid);
-		logger.info("Database returned AddCandidateEntity: " + candidateEntity);
+		logger.info("Database returned CandidateEntity: " + candidateEntity);
 		if(candidateEntity==null)
 			throw new CandidateNotFoundException("CandidateID: " + candidateid);
 		return candidateEntity;
 
 	}
+	
+	public Boolean viewCandidate(){
+		
+		Query query = entityManager.createQuery("SELECT cd from CandidateEntity cd");
+		
+		List<CandidateEntity> list = query.getResultList();
+		for(CandidateEntity candidate: list) {
 			
+			logger.info("Candidate "+candidate);
+		}
+		return true;
+	}
+
+			
+	public Boolean viewCandidateByParticularId(String candidateid) throws CandidateNotFoundException{
+		
+		CandidateEntity candidateEntity = entityManager.find(CandidateEntity.class, candidateid);
+		if(candidateEntity==null)
+			throw new CandidateNotFoundException("CandidateID: " + candidateid);
+		else
+			logger.info("Details of candidateid "+ candidateEntity);
+		return true;
+	}
 	
 }
 

@@ -4,12 +4,13 @@ public class InterviewSchedulerDTO {
 	private int interviewid;
 	private int techrating;
 	private int hrrating;
-	private int location;
-	private int finalstatus;
+	private String location;
+	private String finalstatus;
 	public InterviewSchedulerDTO() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+<<<<<<< HEAD
 	
 	
 	public InterviewSchedulerDTO(int interviewid) {
@@ -29,6 +30,9 @@ public class InterviewSchedulerDTO {
 
 
 	public InterviewSchedulerDTO(int interviewid, int techrating, int hrrating, int location, int finalstatus) {
+=======
+	public InterviewSchedulerDTO(int interviewid, int techrating, int hrrating, String location, String finalstatus) {
+>>>>>>> db6fd83cca796b89527462f3d5d32e522f2dbc68
 		super();
 		this.interviewid = interviewid;
 		this.techrating = techrating;
@@ -53,10 +57,10 @@ public class InterviewSchedulerDTO {
 	public int getHrrating() {
 		return hrrating;
 	}
-	public int getLocation() {
+	public String  getLocation() {
 		return location;
 	}
-	public int getFinalstatus() {
+	public String  getFinalstatus() {
 		return finalstatus;
 	}	
 	public void setInterviewid(int interviewid) {
@@ -68,10 +72,10 @@ public class InterviewSchedulerDTO {
 	public void setHrrating(int hrrating) {
 		this.hrrating = hrrating;
 	}
-	public void setLocation(int location) {
+	public void setLocation(String  location) {
 		this.location = location;
 	}
-	public void setFinalstatus(int finalstatus) {
+	public void setFinalstatus(String  finalstatus) {
 		this.finalstatus = finalstatus;
 	}
 }

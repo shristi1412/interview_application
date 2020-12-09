@@ -15,8 +15,8 @@ import javax.persistence.Table;
 public class PanelMemberEntity {
 	@Id
 	@GeneratedValue
-	@Column(name="emailid")
-	private String emailID;
+	@Column(name="panelid")
+	private int panelid;
 	
 	@Column(name="location")
 	private String location;
@@ -28,9 +28,9 @@ public class PanelMemberEntity {
 		super();
 	}
 	
-	public PanelMemberEntity(String emailID, String location, String type) {
+	public PanelMemberEntity(int panelid, String location, String type) {
 		super();
-		this.emailID = emailID;
+		this.panelid = panelid;
 		this.location = location;
 		this.type = type;
 	}
@@ -38,16 +38,16 @@ public class PanelMemberEntity {
 
 	@Override
 	public String toString() {
-		return "PanelMemberEntity [emailID=" + emailID + ", location=" + location + ", type=" + type + ", employeeID="
+		return "PanelMemberEntity [panelid=" + panelid + ", location=" + location + ", type=" + type + ", employeeID="
 				 + "]";
 	}
 
-	public String getEmailID() {
-		return emailID;
+	public int getPanelid() {
+		return panelid;
 	}
 
-	public void setEmailID(String emailID) {
-		this.emailID = emailID;
+	public void setPanelid(int panelid) {
+		this.panelid = panelid;
 	}
 
 	public String getLocation() {

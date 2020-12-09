@@ -41,7 +41,7 @@ public class EmployeeEntity {
 		return employeeid;
 	}
 
-	public void setEmployeeID(int employeeid) {
+	public void setEmployeeid(int employeeid) {
 		this.employeeid = employeeid;
 	}
 
