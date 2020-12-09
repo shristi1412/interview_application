@@ -16,6 +16,11 @@ public class SearchEmployeeController {
 		empID = empID.toLowerCase();
 		logger.info("Finding employee with Employee ID : " + empID);
 		EmployeeDTO emp = null;
+		String regex="^[emp]+[0-9]$";
+		if(empID.matches(regex)==false&&empID.length()!=8) {
+			logger.error("Employee ID Format is invalid ['empXXXXX' where X is int]: ");
+			return null;
+		}
 		try {
 			emp = empService.searchById(empID);
 		}
@@ -24,6 +29,7 @@ public class SearchEmployeeController {
 			throw new EmployeeNotFoundException(e.getMessage());
 		}
 		return emp;
+		
 	}
 	//BY Name
 	public EmployeeDTO searchByName(String name) throws EmployeeNotFoundException {

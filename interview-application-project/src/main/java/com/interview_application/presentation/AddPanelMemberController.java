@@ -15,6 +15,11 @@ public class AddPanelMemberController {
 	public PanelMemberDTO addPanelMember(String emailID, String location, String type, EmployeeEntity empID) throws EmployeeNotFoundException {
 		logger.info("Adding Employee to the Database, EMP ID : " + empID);
 		PanelMemberDTO pan = null;
+		String regex = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$";
+		if(emailID.matches(regex)==false) {
+			logger.info("Incorrect email ID : " + emailID);
+			return null;
+		}
 		try {
 			pan = PanelMemberService.addPanelMember(emailID, location, type, empID);
 		}

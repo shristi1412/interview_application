@@ -1,4 +1,4 @@
-package AddPanelMember;
+package com.interview_application.presentation;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -8,10 +8,10 @@ import org.apache.logging.log4j.Logger;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import com.interview_application.dto.PanelMemberDTO;
 import com.interview_application.entity.EmployeeEntity;
 import com.interview_application.entity.PanelMemberEntity;
 import com.interview_application.exception.EmployeeNotFoundException;
-import com.interview_application.presentation.AddPanelMemberController;
 
 public class AddPanelMember {
 
@@ -24,33 +24,40 @@ public class AddPanelMember {
 	}
 	@Test
 	public void testAddSimple() throws EmployeeNotFoundException{
-		logger.info("[START] testItemSearchSuccess()");
+		logger.info("[START] testAddSimple()");
 		EmployeeEntity e = new EmployeeEntity("emp85015", "Ramesh");
-		assertEquals(addPanelMemberController.addPanelMember("someone@domain.com", "Mumbai", "HR", e), addPanelMemberController.addPanelMember("someone@domain.com", "Mumbai", "HR", e));
-		logger.info("[END] testItemSearchSuccess()");
+		PanelMemberDTO create = addPanelMemberController.addPanelMember("Ramesh@domain.com", "Mumbai", "HR", e);
+		assertEquals(create, create);
+		logger.info("[END] testAddSimple()");
+	}
+	@Test
+	public void testAddDuplicate() throws EmployeeNotFoundException{
+		logger.info("[START] testAddDuplicate()");
+		EmployeeEntity e = new EmployeeEntity("emp85015", "Ramesh");
+		PanelMemberDTO create = addPanelMemberController.addPanelMember("Ramesh@domain.com", "Mumbai", "HR", e);
+		assertNotNull("Redundant Panel Members not allowed in the database", create);
+		logger.info("[END] testAddDuplicate()");
 	}
 	@Test
 	public void testNotNull() throws EmployeeNotFoundException{
-		logger.info("[START] testItemSearchSuccess()");
+		logger.info("[START] testNotNull()");
 		EmployeeEntity e = new EmployeeEntity("emp85015", "Ramesh");
 		assertNotNull("Employee was added, was found", addPanelMemberController.addPanelMember("someone3@domain.com", "Pune", "Tech", e));
-		logger.info("[END] testItemSearchSuccess()");
+		logger.info("[END] testNotNull()");
 	}
 	@Test
 	public void testInvalid() throws EmployeeNotFoundException{
-		logger.info("[START] testItemSearchSuccess()");
+		logger.info("[START] testInvalid()");
 		EmployeeEntity e = new EmployeeEntity("emp85015", "Ramesh");
-		PanelMemberEntity p = addPanelMemberController.addPanelMember("someone2", "Mumbai", "HR", e);
-		assertNotNull("Employee was added, was found", p);
-		logger.info("[END] testItemSearchSuccess()");
+		assertNotNull("Employee not added", addPanelMemberController.addPanelMember("someone@domain.com", "Pune50", "Tech", e));
+		logger.info("[END] testInvalid()");
 	}
 	@Test
 	public void testInvalidEmp() throws EmployeeNotFoundException{
-		logger.info("[START] testItemSearchSuccess()");
+		logger.info("[START] testInvalidEmp()");
 		EmployeeEntity e = new EmployeeEntity("emp85010", "Ramesh");
-		PanelMemberEntity p = addPanelMemberController.addPanelMember("someone4@domain.com", "Delhi", "HR", e);
-		assertNotNull("Employee was added, was found", p);
-		logger.info("[END] testItemSearchSuccess()");
+		assertNotNull("Employee not added", addPanelMemberController.addPanelMember("someone3", "Pune", "Tech", e));
+		logger.info("[END] testInvalidEmp()");
 	}
 
 }
