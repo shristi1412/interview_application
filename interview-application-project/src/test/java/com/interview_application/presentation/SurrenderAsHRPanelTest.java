@@ -24,7 +24,7 @@ public class SurrenderAsHRPanelTest {
 	@Test
 	public void testPanelMemberSearchSuccess() throws EmployeeNotFoundException {
 		logger.info("[START] testPanelMemberSearchSuccess()");
-		assertNotNull("Panel Member Found", surrenderAsHRPanel.findEmployeeById("emp11000"));
+		assertNotNull("Panel Member Found", surrenderAsHRPanel.findEmployeeById("10000000"));
 		logger.info("[END] testPanelMemberSearchSuccess()");
 	}
 	
@@ -38,7 +38,7 @@ public class SurrenderAsHRPanelTest {
 	@Test
 	public void testPanelMemberSurrenderSuccess() throws EmployeeNotFoundException {
 		logger.info("[START] testPanelMemberSurrenderSuccess()");
-		//assertEquals("Surrendered successfully",  surrenderAsHRPanel.(PanelMemberDTO.setType(null)));
+		//assertTrue(surrenderAsHRPanel.employeeEntity.flag == true)
 		logger.info("[END] testPanelMemberSearchSuccess()");
 	}
 
