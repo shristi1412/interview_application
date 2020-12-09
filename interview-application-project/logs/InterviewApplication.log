@@ -2,3 +2,5 @@ ERROR | 2020-12-08 12:09:04 | [main] spi.SqlExceptionHelper (SqlExceptionHelper.
 ERROR | 2020-12-08 12:18:43 | [main] spi.SqlExceptionHelper (SqlExceptionHelper.java:142) - FATAL: password authentication failed for user "InterviewTracking"
 ERROR | 2020-12-08 12:26:11 | [main] spi.SqlExceptionHelper (SqlExceptionHelper.java:142) - FATAL: password authentication failed for user "postgre"
 ERROR | 2020-12-08 12:26:40 | [main] spi.SqlExceptionHelper (SqlExceptionHelper.java:142) - FATAL: password authentication failed for user "InterviewTracking"
+ERROR | 2020-12-09 14:53:58 | [main] spi.SqlExceptionHelper (SqlExceptionHelper.java:142) - FATAL: password authentication failed for user "postgres"
+ERROR | 2020-12-09 14:59:32 | [main] spi.SqlExceptionHelper (SqlExceptionHelper.java:142) - FATAL: database "interviewTracking" does not exist
