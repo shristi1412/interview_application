@@ -15,4 +15,9 @@ public class CandidateUtils {
 				candidateEntity.getDesignation(), candidateEntity.getExperience(), candidateEntity.getPrimaryskills(),candidateEntity.getSecondaryskills(), 
 				candidateEntity.getNoticeperiod());
 	}
+	
+	public static Boolean convertCandidateEntityIntoCandidate(boolean candidateEntity) {
+		// TODO Auto-generated method stub
+		return true;
+	}
 }

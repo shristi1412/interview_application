@@ -9,40 +9,34 @@
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
 		<class>com.interview-application.entity.EmployeeEntity</class>
-		<class>com.interview-application.entity.AddCandidateEntity</class>
+		<class>com.interview-application.entity.CandidateEntity</class>
 		<class>com.interview-application.entity.InterviewSchedulerEntity</class>
-<<<<<<< HEAD
-		<class>com.interview-application.entity.CandiadteEntity</class>
+
 		<class>com.interview-application.entity.EmployeeEntity</class>
 		<class>com.interview-application.entity.PanelMemberEntity</class>
-=======
-		
->>>>>>> 2fefa60f52b0bed72877e5d0aee2a0dd1f0bca23
+
 		<properties>
-<<<<<<< HEAD
+
+			<property name="hibernate.connection.url" value="jdbc:postgresql://localhost/interviewTracking" />
+
 			<property name="hibernate.connection.url" value="jdbc:postgresql://localhost/interviewtracking" />
-=======
-<<<<<<< HEAD
-			<property name="hibernate.connection.url" value="jdbc:postgresql://localhost/interviewtracking" />
-=======
+
 			<property name="hibernate.connection.url" value="jdbc:postgresql://localhost/InterviewTracking" />
->>>>>>> refs/remotes/origin/main
->>>>>>> f7bd69e9862cc41c444b2a3c6c1b3033324f7249
+
 			<property name="hibernate.connection.driver_class" value="org.postgresql.Driver" />
 
 			<property name="hibernate.connection.username" value="ShopCartAppPU" />
 
 			<property name="hibernate.connection.username" value="postgres" />
-<<<<<<< HEAD
+
 			<property name="hibernate.connection.password" value="12345" />
 
-=======
-<<<<<<< HEAD
+			<property name="hibernate.connection.password" value="root" />
+			
 			<property name="hibernate.connection.password" value="ohmygod" />
-=======
+
 			<property name="hibernate.connection.password" value="gopal" />
->>>>>>> refs/remotes/origin/main
->>>>>>> f7bd69e9862cc41c444b2a3c6c1b3033324f7249
+
 			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
 			<property name="hibernate.show_sql" value="true" />
 			<property name="hibernate.format_sql" value="true" />
