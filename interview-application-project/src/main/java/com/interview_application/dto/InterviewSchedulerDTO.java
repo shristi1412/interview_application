@@ -1,32 +1,34 @@
 package com.interview_application.dto;
 
+import com.interview_application.entity.CandidateEntity;
+
+
 public class InterviewSchedulerDTO {
-	private int interviewid;
+	private String interviewid;
 	private int techrating;
 	private int hrrating;
 	private int location;
 	private int finalstatus;
+	
+	private CandidateEntity candidateIDinter;
+
 	public InterviewSchedulerDTO() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public InterviewSchedulerDTO(int interviewid, int techrating, int hrrating, int location, int finalstatus) {
+	public InterviewSchedulerDTO(String interviewid, int techrating, int hrrating, int location, int finalstatus,
+			 CandidateEntity candidateIDinter ) {
 		super();
 		this.interviewid = interviewid;
 		this.techrating = techrating;
 		this.hrrating = hrrating;
 		this.location = location;
 		this.finalstatus = finalstatus;
+		
+		this.candidateIDinter = candidateIDinter;
+	
 	}
-	
-	
-	
-	@Override
-	public String toString() {
-		return "InterviewSchedulerEntity [interviewid=" + interviewid + ", techrating=" + techrating + ", hrrating="
-				+ hrrating + ", location=" + location + ", finalstatus=" + finalstatus + "]";
-	}
-	public int getInterviewid() {
+	public String getInterviewid() {
 		return interviewid;
 	}
 	public int getTechrating() {
@@ -40,8 +42,13 @@ public class InterviewSchedulerDTO {
 	}
 	public int getFinalstatus() {
 		return finalstatus;
-	}	
-	public void setInterviewid(int interviewid) {
+	}
+	
+	public CandidateEntity getCandidateIDinter() {
+		return candidateIDinter;
+	}
+	
+	public void setInterviewid(String interviewid) {
 		this.interviewid = interviewid;
 	}
 	public void setTechrating(int techrating) {
@@ -55,5 +62,16 @@ public class InterviewSchedulerDTO {
 	}
 	public void setFinalstatus(int finalstatus) {
 		this.finalstatus = finalstatus;
+	}
+	
+	public void setCandidateIDinter(CandidateEntity candidateIDinter) {
+		this.candidateIDinter = candidateIDinter;
+	}
+	
+	@Override
+	public String toString() {
+		return "InterviewSchedulerEntity [interviewid=" + interviewid + ", techrating=" + techrating + ", hrrating="
+				+ hrrating + ", location=" + location + ", finalstatus=" + finalstatus + ", employeeIDinter="
+				 + ", candidateIDinter=" + candidateIDinter + ", emailIDinter=" ;
 	}
 }
