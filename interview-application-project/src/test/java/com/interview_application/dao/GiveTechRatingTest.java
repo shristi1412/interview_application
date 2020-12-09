@@ -19,12 +19,12 @@ public class GiveTechRatingTest {
 	
 	@BeforeClass
 	public static void setUp() {
-		logger = LogManager.getLogger(GiveTechRating.class.getName());
+		logger = LogManager.getLogger(GiveTechRatingTest.class.getName());
 		giveTechRating = new GiveTechRatingDAOImpl();
 		intsched=new InterviewSchedulerEntity();
 	}
 	@Test
-	public void test() throws RatingNotFoundException {
+	public void testTechRating() throws RatingNotFoundException {
 		logger.info("[START] testTechRating()");
 
 		//assertNotNull("Rating Given",givetechrating.giveTechRating(10));
@@ -35,8 +35,8 @@ public class GiveTechRatingTest {
 	}
 
 	@Test
-	public void test1() throws RatingNotFoundException {
-		logger.info("[START] testTechRating()");
+	public void testTechRating1() throws RatingNotFoundException {
+		logger.info("[START] testTechRating1()");
 		assertNotNull("Rating Given",giveTechRating.giveTechRating(10));
 		logger.info("[END] testTechRating()");
 	}

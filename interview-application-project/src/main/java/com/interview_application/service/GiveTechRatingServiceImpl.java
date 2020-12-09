@@ -14,7 +14,6 @@ import com.interview_application.exception.CandidateNotFoundException;
 import com.interview_application.presentation.GiveTechRating;
 import com.interview_application.service.GiveTechRatingServiceImpl;
 import com.interview_application.utilities.CandidateUtils;
-//import com.cg.shoppingapp.utils.ShoppingAppUtils;
 
 public class GiveTechRatingServiceImpl  {
 	private static Logger logger = LogManager.getLogger(GiveTechRatingServiceImpl.class.getName());
