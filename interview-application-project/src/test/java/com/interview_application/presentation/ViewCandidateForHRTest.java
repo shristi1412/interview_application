@@ -21,7 +21,7 @@ public class ViewCandidateForHRTest {
 	}
 	
 	@Test
-	public void tesCandidateSearchSuccess() throws CandidateNotFoundException {
+	public void testCandidateSearchSuccess() throws CandidateNotFoundException {
 		logger.info("[START] testCandidateSearchSuccess()");
 		assertNotNull("Candidate Found", viewCandidateForHR.searchById("CAND1000"));
 		logger.info("[END] testCandidateSearchSuccess()");
