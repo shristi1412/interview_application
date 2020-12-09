@@ -15,7 +15,7 @@ import javax.persistence.Table;
 public class EmployeeEntity {
 	@Id
 	@GeneratedValue
-	@Column(name="employeeID")
+	@Column(name="employeeid")
 	private String employeeID;
 	@Column(name="name")
 	private String name;
