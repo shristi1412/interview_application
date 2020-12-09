@@ -86,8 +86,8 @@ private String emailid;
 		return type;
 	}
 
-	public void setType(String type) {
-		this.type = type;
+	public static void setType(String type) {
+		//this.type = type;
 	}
 
 	public EmployeeEntity getEmployeeID() {

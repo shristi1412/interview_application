@@ -17,15 +17,17 @@ public class EmployeeEntity {
 	private String employeeid;
 	@Column(name="name")
 	private String name;
+	private PanelMemberEntity panelMemberEntity;
 	
 	public EmployeeEntity() {
 		super();
 	}
 
-	public EmployeeEntity(String employeeID, String name) {
+	public EmployeeEntity(String employeeID, String name, PanelMemberEntity panelMemberEntity) {
 		super();
 		this.employeeid = employeeID;
 		this.name = name;
+		this.panelMemberEntity = panelMemberEntity;
 	}
 
 	public String getEmployeeID() {
@@ -44,7 +46,14 @@ public class EmployeeEntity {
 		this.name = name;
 	}
 
+	public PanelMemberEntity getPanelMemberEntity() {
+		return panelMemberEntity;
+	}
 
+	public void setPanelMemberEntity(PanelMemberEntity panelMemberEntity) {
+		this.panelMemberEntity = panelMemberEntity;
+	}
+	
 	@Override
 	public String toString() {
 		return "EmployeeEntity [employeeID=" + employeeid + ", name=" + name + "]";

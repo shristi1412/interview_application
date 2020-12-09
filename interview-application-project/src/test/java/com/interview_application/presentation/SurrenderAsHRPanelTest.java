@@ -7,6 +7,7 @@ import org.apache.logging.log4j.Logger;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import com.interview_application.dto.PanelMemberDTO;
 import com.interview_application.exception.EmployeeNotFoundException;
 
 public class SurrenderAsHRPanelTest {
@@ -23,15 +24,22 @@ public class SurrenderAsHRPanelTest {
 	@Test
 	public void testPanelMemberSearchSuccess() throws EmployeeNotFoundException {
 		logger.info("[START] testPanelMemberSearchSuccess()");
-		assertNotNull("Panel Member Found", surrenderAsHRPanel.searchById("emp11000"));
+		assertNotNull("Panel Member Found", surrenderAsHRPanel.findEmployeeById("emp11000"));
 		logger.info("[END] testPanelMemberSearchSuccess()");
 	}
 	
 	@Test(expected = EmployeeNotFoundException.class)
 	public void testPanelMemberSearchFailed() throws EmployeeNotFoundException {
 		logger.info("[START] testPanelMemberSearchFailed()");
-		surrenderAsHRPanel.searchById("Ramesh");
+		surrenderAsHRPanel.findEmployeeById("Ramesh");
 		logger.info("[END] testPanelMemberSearchFailed()");
+	}
+	
+	@Test
+	public void testPanelMemberSurrenderSuccess() throws EmployeeNotFoundException {
+		logger.info("[START] testPanelMemberSurrenderSuccess()");
+		//assertEquals("Surrendered successfully",  surrenderAsHRPanel.(PanelMemberDTO.setType(null)));
+		logger.info("[END] testPanelMemberSearchSuccess()");
 	}
 
 }

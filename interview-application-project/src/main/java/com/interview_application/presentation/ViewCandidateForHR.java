@@ -3,19 +3,21 @@ package com.interview_application.presentation;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.interview_application.dto.CandidateDTO;
+import com.interview_application.dto.Candidate;
 import com.interview_application.exception.CandidateNotFoundException;
 import com.interview_application.service.ViewACandidateHRService;
 import com.interview_application.service.ViewACandidateHRServiceImpl;
 
 public class ViewCandidateForHR {
-	private static Logger logger = LogManager.getLogger(SearchEmployeeController.class.getName());
-	ViewACandidateHRService viewCandidateService = new ViewACandidateHRServiceImpl();
-	public CandidateDTO searchById(String candidateID) throws CandidateNotFoundException {
-		logger.info("Finding candidate with Candidate ID : " + candidateID);
-		CandidateDTO candidate = null;
+	
+	private static Logger logger = LogManager.getLogger(ViewCandidateForHR.class.getName());
+	ViewACandidateHRService viewACandidateHRService = new ViewACandidateHRServiceImpl();
+	
+	public Candidate findCandidateById(String candidateid) throws CandidateNotFoundException {
+		logger.info("Finding candidate for id: " + candidateid);
+		Candidate candidate = null;
 		try {
-			candidate = viewCandidateService.searchById(candidateID);
+			candidate = viewACandidateHRService.findById(candidateid);
 		}
 		catch(Exception e) {
 			logger.error("CandidateNotFoundException: " + e);
@@ -23,4 +25,11 @@ public class ViewCandidateForHR {
 		}
 		return candidate;
 	}
+
+
+
 }
+
+	
+	
+
