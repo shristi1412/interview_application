@@ -1,9 +1,9 @@
 package com.interview_application.dao;
+import com.interview_application.entity.InterviewSchedulerEntity;
+import com.interview_application.exception.InterviewNotFoundException;
+import com.interview_application.exception.RatingNotFoundException;
 
-public class ViewInterviewMembersHRDAO {
-
-	public ViewInterviewMembersHRDAO() {
-		// TODO Auto-generated constructor stub
-	}
-
+public interface ViewInterviewMembersHRDAO {
+	InterviewSchedulerEntity findById(int interviewID) throws InterviewNotFoundException;
+	
 }
