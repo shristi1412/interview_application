@@ -1,40 +1,36 @@
 package com.interview_application.dto;
 
-import javax.persistence.CascadeType;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
+
+import com.interview_application.entity.InterviewSchedulerEntity;
 
 public class PanelMemberDTO {
 
 	private String emailID;
+	
 	private String location;
+	
 	private String type;
 	
-	@OneToOne(cascade={CascadeType.ALL},
-			fetch=FetchType.EAGER, optional = false)
-	@JoinColumn(name="employeeID")
-	private String employeeIDpanel;
 	
 	public PanelMemberDTO() {
 		super();
 	}
 	
-	public PanelMemberDTO(String emailID, String location, String type, String employeeID) {
+	public PanelMemberDTO(String emailID, String location, String type) {
 		super();
 		this.emailID = emailID;
 		this.location = location;
 		this.type = type;
-		this.employeeIDpanel = employeeID;
+		
 	}
 
-
-	@Override
-	public String toString() {
-		return "PanelMemberEntity [emailID=" + emailID + ", location=" + location + ", type=" + type + ", employeeID="
-				+ employeeIDpanel + "]";
-	}
 
 	public String getEmailID() {
 		return emailID;
@@ -60,12 +56,12 @@ public class PanelMemberDTO {
 		this.type = type;
 	}
 
-	public String getEmployeeID() {
-		return employeeIDpanel;
+
+	@Override
+	public String toString() {
+		return "PanelMemberEntity [emailID=" + emailID + ", location=" + location + ", type=" + type
+				+  "]";
 	}
 
-	public void setEmployeeID(String employeeID) {
-		this.employeeIDpanel = employeeID;
-	}
 
 }

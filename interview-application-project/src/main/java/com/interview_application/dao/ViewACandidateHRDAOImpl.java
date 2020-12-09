@@ -16,7 +16,7 @@ public class ViewACandidateHRDAOImpl implements ViewACandidateHRDAO {
 		private static EntityManager entityManager;
 		
 		static {
-			EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("ShopCartAppPU");
+			EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("InterviewTracking");
 			entityManager = entityManagerFactory.createEntityManager();
 		}
 		public CandidateEntity findById(int candidateID) throws CandidateNotFoundException {

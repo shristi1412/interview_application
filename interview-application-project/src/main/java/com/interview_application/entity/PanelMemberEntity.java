@@ -15,7 +15,7 @@ import javax.persistence.Table;
 public class PanelMemberEntity {
 	@Id
 	@GeneratedValue
-	@Column(name="emailID")
+	@Column(name="emailid")
 	private String emailID;
 	
 	@Column(name="location")
@@ -23,29 +23,23 @@ public class PanelMemberEntity {
 	
 	@Column(name="type")
 	private String type;
-	
-	@OneToOne(cascade={CascadeType.ALL},
-			fetch=FetchType.EAGER, optional = false)
-	@JoinColumn(name="employeeID")
-	private String employeeIDpanel;
-	
+		
 	public PanelMemberEntity() {
 		super();
 	}
 	
-	public PanelMemberEntity(String emailID, String location, String type, String employeeID) {
+	public PanelMemberEntity(String emailID, String location, String type) {
 		super();
 		this.emailID = emailID;
 		this.location = location;
 		this.type = type;
-		this.employeeIDpanel = employeeID;
 	}
 
 
 	@Override
 	public String toString() {
 		return "PanelMemberEntity [emailID=" + emailID + ", location=" + location + ", type=" + type + ", employeeID="
-				+ employeeIDpanel + "]";
+				 + "]";
 	}
 
 	public String getEmailID() {
@@ -72,12 +66,5 @@ public class PanelMemberEntity {
 		this.type = type;
 	}
 
-	public String getEmployeeID() {
-		return employeeIDpanel;
-	}
-
-	public void setEmployeeID(String employeeID) {
-		this.employeeIDpanel = employeeID;
-	}
 
 }

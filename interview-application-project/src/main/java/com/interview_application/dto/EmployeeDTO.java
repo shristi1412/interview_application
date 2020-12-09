@@ -1,41 +1,31 @@
-package com.interview_application.entity;
+package com.interview_application.dto;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
-import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
 
-@Entity
-@Table(name="employee")
-public class EmployeeEntity {
-	@Id
-	@GeneratedValue
-	@Column(name="employeeID")
+import com.interview_application.entity.EmployeeEntity;
+import com.interview_application.entity.InterviewSchedulerEntity;
+import com.interview_application.entity.PanelMemberEntity;
+
+public class EmployeeDTO {
 	private String employeeID;
-	@Column(name="name")
 	private String name;
-	
-
-	@OneToOne(cascade={CascadeType.ALL},
-			fetch=FetchType.EAGER, optional = false)
-	@JoinColumn(name="emailid")
 	private PanelMemberEntity panelMemberEntity;
 	
-	public EmployeeEntity() {
+	public EmployeeDTO() {
 		super();
 	}
 
-	public EmployeeEntity(String employeeID, String name, PanelMemberEntity panelMemberEntity) {
+	public EmployeeDTO(String employeeID, String name, PanelMemberEntity panelMemberEntity)
+ {
 		super();
 		this.employeeID = employeeID;
 		this.name = name;
 		this.panelMemberEntity = panelMemberEntity;
 	}
+	
 
 	public String getEmployeeID() {
 		return employeeID;
@@ -52,7 +42,7 @@ public class EmployeeEntity {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
 	public PanelMemberEntity getPanelMemberEntity() {
 		return panelMemberEntity;
 	}
@@ -63,8 +53,8 @@ public class EmployeeEntity {
 
 	@Override
 	public String toString() {
-		return "EmployeeEntity [employeeID=" + employeeID + ", name=" + name + "panelMemberEntity ="+ panelMemberEntity+"]";
+		return "EmployeeEntity [employeeID=" + employeeID + ", name=" + name + ", panelMemberEntity="
+				+ panelMemberEntity + "]";
 	}
-		
 
 }
