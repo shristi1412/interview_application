@@ -1,5 +1,6 @@
 package com.interview_application.dao;
 
+
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -9,12 +10,9 @@ import javax.persistence.Query;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
-
 import com.interview_application.entity.CandidateEntity;
 import com.interview_application.exception.CandidateNotFoundException;
 
-import com.interview_application.exception.NullValueFoundException;
 
 
 public class CandidateDAOImpl implements CandidateDAO{
@@ -23,22 +21,23 @@ public class CandidateDAOImpl implements CandidateDAO{
 	private static EntityManager entityManager;
 	
 	static {
-		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("InterviewTracking");
+		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("InterviewTrackingPU");
 		entityManager = entityManagerFactory.createEntityManager();
 	}
 	
 	
-   public void addCandidate(CandidateEntity candidate)throws CandidateNotFoundException {
+	// Function for adding Candidate details
+    public void addCandidate(CandidateEntity candidate)throws CandidateNotFoundException {
 		
 			entityManager.getTransaction().begin();
 			entityManager.merge(candidate);
 			entityManager.getTransaction().commit();
-			logger.info("Candidate data inserted successfully");
+			logger.info("Candidate data inserted successfully!");
 		
 	}
-	
-   
-   public CandidateEntity findByCandidateID(String candidateid) throws CandidateNotFoundException {
+    
+    //Function for searching the added Candidate details
+    public CandidateEntity findByCandidateID(int candidateid) throws CandidateNotFoundException {
 		
 		CandidateEntity candidateEntity = entityManager.find(CandidateEntity.class, candidateid);
 		logger.info("Database returned CandidateEntity: " + candidateEntity);
@@ -48,6 +47,7 @@ public class CandidateDAOImpl implements CandidateDAO{
 
 	}
 	
+    //Function for viewing Candidate details
 	public Boolean viewCandidate(){
 		
 		Query query = entityManager.createQuery("SELECT cd from CandidateEntity cd");
@@ -60,8 +60,8 @@ public class CandidateDAOImpl implements CandidateDAO{
 		return true;
 	}
 
-			
-	public Boolean viewCandidateByParticularId(String candidateid) throws CandidateNotFoundException{
+	//Function for viewing Candidate details by particular Id
+	public Boolean viewCandidateByParticularId(int candidateid) throws CandidateNotFoundException{
 		
 		CandidateEntity candidateEntity = entityManager.find(CandidateEntity.class, candidateid);
 		if(candidateEntity==null)
@@ -72,15 +72,3 @@ public class CandidateDAOImpl implements CandidateDAO{
 	}
 	
 }
-
-/*
-public boolean addEmployee(EmployeeEntity employee) {
-try{
-    manager.persist(employee);
-}catch(Exception e){
-    e.printStackTrace();
-    return false;
-}
-return true;
-}
-*/
