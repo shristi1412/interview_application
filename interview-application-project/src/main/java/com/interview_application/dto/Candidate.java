@@ -3,7 +3,7 @@ package com.interview_application.dto;
 import com.interview_application.entity.InterviewSchedulerEntity;
 
 public class Candidate {
-	private String candidateid;
+	private int candidateid;
 	private String candidatename;
 	private String location;
 	private String designation;
@@ -15,7 +15,7 @@ public class Candidate {
 	private InterviewSchedulerEntity interviewSchedulerEntity;
 
 
-	public Candidate(String candidateid, String candidatename, String location, String designation,
+	public Candidate(int candidateid, String candidatename, String location, String designation,
 			String qualification, int experience, int noticeperiod, String primaryskills, String secondaryskills,InterviewSchedulerEntity interviewSchedulerEntity) {
 		super();
 		this.candidateid = candidateid;
@@ -32,15 +32,15 @@ public class Candidate {
 	
 	@Override
 	public String toString() {
-		return "CandidateEntity [candidateID=" + candidateid + ", candidatename=" + candidatename + ", location="
+		return "CandidateEntity [candidateid=" + candidateid + ", candidatename=" + candidatename + ", location="
 				+ location + ", designation=" + designation + ", qualification=" + qualification + ", experience="
 				+ experience + ", noticeperiod=" + noticeperiod + ", primaryskills=" + primaryskills
 				+ ", secondaryskills=" + secondaryskills + ", interviewSchedulerEntity=" + interviewSchedulerEntity +"]";
 	}
-	public String getCandidateID() {
+	public int getCandidateid() {
 		return candidateid;
 	}
-	public void setCandidateID(String candidateid) {
+	public void setCandidateid(int candidateid) {
 		this.candidateid = candidateid;
 	}
 	public String getCandidatename() {

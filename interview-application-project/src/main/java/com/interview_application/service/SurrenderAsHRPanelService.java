@@ -4,7 +4,7 @@ import com.interview_application.dto.EmployeeDTO;
 import com.interview_application.exception.EmployeeNotFoundException;
 
 public interface SurrenderAsHRPanelService {
-	EmployeeDTO findById(String employeeID) throws EmployeeNotFoundException;
+	EmployeeDTO findById(int employeeid) throws EmployeeNotFoundException;
 
 
 }

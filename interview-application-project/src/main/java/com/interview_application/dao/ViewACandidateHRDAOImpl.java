@@ -20,17 +20,11 @@ public class ViewACandidateHRDAOImpl implements ViewACandidateHRDAO{
 		entityManager= entityManagerFactory.createEntityManager();	
 	}
 	
-	public CandidateEntity findById(String candidateid) throws CandidateNotFoundException{
+	public CandidateEntity findById(int candidateid) throws CandidateNotFoundException{
 		
-<<<<<<< HEAD
-		static {
-			EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("InterviewTracking");
-			entityManager = entityManagerFactory.createEntityManager();
-=======
 		CandidateEntity candidateEntity=entityManager.find(CandidateEntity.class, candidateid);
 		if (candidateEntity == null) {
 			throw new CandidateNotFoundException("Candidate id "+candidateid+"not found");
->>>>>>> refs/remotes/origin/main
 		}
 		return candidateEntity;
 		

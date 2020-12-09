@@ -15,9 +15,9 @@ public class SurrenderAsHRPanelServiceImpl implements SurrenderAsHRPanelService{
 	private static Logger logger = LogManager.getLogger(SurrenderAsHRPanelServiceImpl.class.getName());
 	SurrenderAsHRPanelDAO surrenderHRPanelDAO = new SurrenderAsHRPanelDAOImpl();
 	
-	public EmployeeDTO findById(String employeeID) throws EmployeeNotFoundException{
-		EmployeeEntity employeeEntity = surrenderHRPanelDAO.findById(employeeID);
-		logger.info("EmployeeID: " + employeeID);
+	public EmployeeDTO findById(int employeeid) throws EmployeeNotFoundException{
+		EmployeeEntity employeeEntity = surrenderHRPanelDAO.findById(employeeid);
+		logger.info("EmployeeID: " + employeeid);
 		return SurrenderAsHRPanelUtils.convertEmployeeEntityIntoEmployeeDTO(employeeEntity);
 	}
 

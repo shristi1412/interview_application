@@ -19,7 +19,7 @@ public class SurrenderAsTechServiceImpl implements SurrenderAsTechService{
 	
 	public EmployeeDTO findById(String employeeID) throws  EmployeeNotFoundTechToSurrenderException{
 		EmployeeEntity employeeEntity = surrenderTechPanelDAO.findById(employeeID);
-		logger.info("EmployeeID: " + employeeEntity.getEmployeeID());
+		logger.info("EmployeeID: " + employeeEntity.getEmployeeid());
 		return InterviewTrackingSurrenderTechUtils.convertEmployeeEntityIntoEmployeeDTO(employeeEntity);
 	}
 

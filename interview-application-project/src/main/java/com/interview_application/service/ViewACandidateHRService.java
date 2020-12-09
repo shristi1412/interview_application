@@ -5,5 +5,5 @@ import com.interview_application.exception.CandidateNotFoundException;
 
 public interface ViewACandidateHRService {
 
-	Candidate findById(String candidateid) throws CandidateNotFoundException;
+	 Candidate findById(int candidateid) throws CandidateNotFoundException;
 }

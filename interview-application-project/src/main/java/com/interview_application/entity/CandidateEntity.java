@@ -18,7 +18,7 @@ public class CandidateEntity {
 	@Id
 	@GeneratedValue
 	@Column(name="candidateid")
-	private String candidateid;
+	private int candidateid;
 	
 	@Column(name="candidatename")
 	private String candidatename;
@@ -53,7 +53,7 @@ public class CandidateEntity {
 		super();
 	}
 
-	public CandidateEntity(String candidateid, String candidatename, String location, String designation,
+	public CandidateEntity(int candidateid, String candidatename, String location, String designation,
 			String qualification, int experience, int noticeperiod, String primaryskills, String secondaryskills,InterviewSchedulerEntity interviewSchedulerEntity) {
 		super();
 		this.candidateid = candidateid;
@@ -69,11 +69,11 @@ public class CandidateEntity {
 	}
 
 
-	public String getCandidateID() {
+	public int getCandidateID() {
 		return candidateid;
 	}
 
-	public void setCandidateID(String candidateID) {
+	public void setCandidateID(int candidateID) {
 		this.candidateid = candidateID;
 	}
 

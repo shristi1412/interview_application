@@ -10,7 +10,7 @@ import com.interview_application.entity.InterviewSchedulerEntity;
 import com.interview_application.entity.PanelMemberEntity;
 
 public class EmployeeDTO {
-	private String employeeID;
+	private int employeeid;
 	private String name;
 	private PanelMemberEntity panelMemberEntity;
 	
@@ -18,21 +18,21 @@ public class EmployeeDTO {
 		super();
 	}
 
-	public EmployeeDTO(String employeeID, String name, PanelMemberEntity panelMemberEntity)
+	public EmployeeDTO(int employeeid, String name, PanelMemberEntity panelMemberEntity)
  {
 		super();
-		this.employeeID = employeeID;
+		this.employeeid = employeeid;
 		this.name = name;
 		this.panelMemberEntity = panelMemberEntity;
 	}
 	
 
-	public String getEmployeeID() {
-		return employeeID;
+	public int getEmployeeid() {
+		return employeeid;
 	}
 
-	public void setEmployeeID(String employeeID) {
-		this.employeeID = employeeID;
+	public void setEmployeeID(int employeeid) {
+		this.employeeid = employeeid;
 	}
 
 	public String getName() {
@@ -53,7 +53,7 @@ public class EmployeeDTO {
 
 	@Override
 	public String toString() {
-		return "EmployeeEntity [employeeID=" + employeeID + ", name=" + name + ", panelMemberEntity="
+		return "EmployeeEntity [employeeid=" + employeeid + ", name=" + name + ", panelMemberEntity="
 				+ panelMemberEntity + "]";
 	}
 

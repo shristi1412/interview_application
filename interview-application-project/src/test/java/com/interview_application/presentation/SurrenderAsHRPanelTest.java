@@ -24,14 +24,14 @@ public class SurrenderAsHRPanelTest {
 	@Test
 	public void testPanelMemberSearchSuccess() throws EmployeeNotFoundException {
 		logger.info("[START] testPanelMemberSearchSuccess()");
-		assertNotNull("Panel Member Found", surrenderAsHRPanel.findEmployeeById("10000000"));
+		assertNotNull("Panel Member Found", surrenderAsHRPanel.findEmployeeById(10000000));
 		logger.info("[END] testPanelMemberSearchSuccess()");
 	}
 	
 	@Test(expected = EmployeeNotFoundException.class)
 	public void testPanelMemberSearchFailed() throws EmployeeNotFoundException {
 		logger.info("[START] testPanelMemberSearchFailed()");
-		surrenderAsHRPanel.findEmployeeById("Ramesh");
+		surrenderAsHRPanel.findEmployeeById(-111);
 		logger.info("[END] testPanelMemberSearchFailed()");
 	}
 	

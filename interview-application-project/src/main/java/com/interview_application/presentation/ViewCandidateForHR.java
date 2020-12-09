@@ -13,7 +13,7 @@ public class ViewCandidateForHR {
 	private static Logger logger = LogManager.getLogger(ViewCandidateForHR.class.getName());
 	ViewACandidateHRService viewACandidateHRService = new ViewACandidateHRServiceImpl();
 	
-	public Candidate findCandidateById(String candidateid) throws CandidateNotFoundException {
+	public Candidate findCandidateById(int candidateid) throws CandidateNotFoundException {
 		logger.info("Finding candidate for id: " + candidateid);
 		Candidate candidate = null;
 		try {
