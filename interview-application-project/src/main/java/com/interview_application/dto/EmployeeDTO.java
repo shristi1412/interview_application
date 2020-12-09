@@ -4,31 +4,35 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 
+import com.interview_application.entity.EmployeeEntity;
 import com.interview_application.entity.InterviewSchedulerEntity;
+import com.interview_application.entity.PanelMemberEntity;
 
 public class EmployeeDTO {
-	private String employeeid;
-	@Column(name="name")
+	private String employeeID;
 	private String name;
+	private PanelMemberEntity panelMemberEntity;
 	
 	public EmployeeDTO() {
 		super();
 	}
 
-	public EmployeeDTO(String employeeID, String name) {
+	public EmployeeDTO(String employeeID, String name, PanelMemberEntity panelMemberEntity)
+ {
 		super();
-		this.employeeid = employeeID;
+		this.employeeID = employeeID;
 		this.name = name;
+		this.panelMemberEntity = panelMemberEntity;
 	}
+	
 
 	public String getEmployeeID() {
-		return employeeid;
+		return employeeID;
 	}
 
 	public void setEmployeeID(String employeeID) {
-		this.employeeid = employeeID;
+		this.employeeID = employeeID;
 	}
 
 	public String getName() {
@@ -39,9 +43,18 @@ public class EmployeeDTO {
 		this.name = name;
 	}
 
+	public PanelMemberEntity getPanelMemberEntity() {
+		return panelMemberEntity;
+	}
+
+	public void setPanelMemberEntity(PanelMemberEntity panelMemberEntity) {
+		this.panelMemberEntity = panelMemberEntity;
+	}
 
 	@Override
 	public String toString() {
-		return "EmployeeEntity [employeeID=" + employeeid + ", name=" + name + "]";
+		return "EmployeeEntity [employeeID=" + employeeID + ", name=" + name + ", panelMemberEntity="
+				+ panelMemberEntity + "]";
 	}
+
 }

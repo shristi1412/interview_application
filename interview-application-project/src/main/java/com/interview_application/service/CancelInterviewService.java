@@ -6,6 +6,6 @@ import com.interview_application.exception.InterviewNotFoundException;
 
 public interface CancelInterviewService {
 	
-	InterviewSchedulerEntity findById(int interviewID) throws InterviewNotFoundException;
+	InterviewSchedulerEntity findById(String interviewid) throws InterviewNotFoundException;
 
 }

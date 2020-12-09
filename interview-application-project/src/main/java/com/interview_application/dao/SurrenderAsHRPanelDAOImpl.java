@@ -9,12 +9,11 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.interview_application.entity.EmployeeEntity;
-import com.interview_application.entity.PanelMemberEntity;
-import com.interview_application.exception.EmployeeNotFoundTechToSurrenderException;
+import com.interview_application.exception.EmployeeNotFoundException;
 
-public class SurrenderTechPanelDAOImpl implements SurrenderTechPanelDAO{
+public class SurrenderAsHRPanelDAOImpl implements SurrenderAsHRPanelDAO{
 	
-	private static Logger logger=LogManager.getFormatterLogger(SurrenderTechPanelDAOImpl.class.getName());
+	private static Logger logger=LogManager.getFormatterLogger(SurrenderAsHRPanelDAOImpl.class.getName());
 	private static EntityManager entityManager;
 	
 	static {
@@ -22,15 +21,15 @@ public class SurrenderTechPanelDAOImpl implements SurrenderTechPanelDAO{
 		entityManager= entityManagerFactory.createEntityManager();	
 	}
 	
-	public EmployeeEntity findById(String employeeID) throws EmployeeNotFoundTechToSurrenderException{
+	public EmployeeEntity findById(String employeeID) throws EmployeeNotFoundException{
 		
 		EmployeeEntity employeeEntity=entityManager.find(EmployeeEntity.class, employeeID);
-		employeeEntity.getPanelMemberEntity().setType("null");
-
 		if (employeeEntity == null) {
-			throw new EmployeeNotFoundTechToSurrenderException("Employee id "+employeeID+"not found");
+			throw new EmployeeNotFoundException("Employee id "+employeeID+"not found");
 		}
+		employeeEntity.getPanelMemberEntity().setType(null);
 		return employeeEntity;
 		
 	}
+
 }

@@ -4,9 +4,7 @@ import com.interview_application.entity.CandidateEntity;
 import com.interview_application.exception.CandidateNotFoundException;
 
 public interface ViewACandidateHRDAO {
-
-	CandidateEntity findById(int candidateID) throws CandidateNotFoundException;
-
-	CandidateEntity searchById(String candidateID);
+	
+	CandidateEntity findById(String candidateid) throws CandidateNotFoundException;
 
 }

@@ -7,7 +7,7 @@ public class CancelInterviewUtils {
 		return new InterviewSchedulerEntity(interview.getInterviewID());
 	}
 	public static InterviewSchedulerDTO convertInterviewSchedulerDTOIntoInterviewSchedulerEntity(InterviewSchedulerDTO interview) {
-		return new InterviewSchedulerDTO(interview.getInterviewID());
+		return new InterviewSchedulerDTO(interview.getInterviewid());
 	}
 
 }

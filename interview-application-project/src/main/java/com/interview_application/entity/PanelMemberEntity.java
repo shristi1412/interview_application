@@ -18,13 +18,20 @@ public class PanelMemberEntity {
 	@Id
 	@GeneratedValue
 	@Column(name="emailid")
+<<<<<<< HEAD
+	private String emailID;
+=======
 	private String emailid;
+>>>>>>> refs/remotes/origin/main
 	
 	@Column(name="location")
 	private String location;
 	
 	@Column(name="type")
 	private String type;
+<<<<<<< HEAD
+		
+=======
 	
 	@OneToOne(cascade={CascadeType.ALL},
 			fetch=FetchType.EAGER, optional = false)
@@ -34,11 +41,16 @@ public class PanelMemberEntity {
 	@JoinColumn(name="interviewid")
 	private InterviewSchedulerEntity emailIDInterview;
 	
+>>>>>>> refs/remotes/origin/main
 	public PanelMemberEntity() {
 		super();
 	}
 	
+<<<<<<< HEAD
+	public PanelMemberEntity(String emailID, String location, String type) {
+=======
 	public PanelMemberEntity(String emailid, String location, String type, EmployeeEntity employeeID,InterviewSchedulerEntity emailIDInterview) {
+>>>>>>> refs/remotes/origin/main
 		super();
 		this.emailid = emailid;
 		this.location = location;
@@ -52,7 +64,6 @@ public class PanelMemberEntity {
 		this.emailid = emailid;
 		this.location = location;
 		this.type = type;
-		this.employeeIDpanel = employeeID;
 	}
 	
 	public InterviewSchedulerEntity getemailIDInterview() {
@@ -63,12 +74,19 @@ public class PanelMemberEntity {
 		this.emailIDInterview = candidateInterview;
 	}
 
+<<<<<<< HEAD
+	@Override
+	public String toString() {
+		return "PanelMemberEntity [emailID=" + emailID + ", location=" + location + ", type=" + type + ", employeeID="
+				 + "]";
+=======
 	public EmployeeEntity getEmployeeIDpanel() {
 		return employeeIDpanel;
 	}
 
 	public void setEmployeeIDpanel(EmployeeEntity employeeIDpanel) {
 		this.employeeIDpanel = employeeIDpanel;
+>>>>>>> refs/remotes/origin/main
 	}
 
 	public String getEmailID() {
@@ -95,6 +113,8 @@ public class PanelMemberEntity {
 		this.type = type;
 	}
 
+<<<<<<< HEAD
+=======
 	public EmployeeEntity getEmployeeID() {
 		return employeeIDpanel;
 	}
@@ -102,6 +122,7 @@ public class PanelMemberEntity {
 	public void setEmployeeID(EmployeeEntity employeeID) {
 		this.employeeIDpanel = employeeID;
 	}
+>>>>>>> refs/remotes/origin/main
 
 	@Override
 	public String toString() {

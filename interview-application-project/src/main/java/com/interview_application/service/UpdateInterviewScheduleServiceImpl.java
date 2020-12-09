@@ -17,8 +17,8 @@ public class UpdateInterviewScheduleServiceImpl implements UpdateInterviewSchedu
 	private static Logger logger = LogManager.getLogger( UpdateInterviewScheduleServiceImpl.class.getName());
 	UpdateInterviewScheduleDAO interviewDao = new UpdateInterviewScheduleDAOImpl();
 	
-	public InterviewSchedulerEntity findById(int interviewID) throws InterviewNotFoundException {
-		InterviewSchedulerEntity interviewSchedulerEntity = interviewDao.findById(interviewID);
+	public InterviewSchedulerEntity findById(String interviewid) throws InterviewNotFoundException {
+		InterviewSchedulerEntity interviewSchedulerEntity = interviewDao.findById(interviewid);
 		logger.info("InterviewSchedulerEntity: " + interviewSchedulerEntity);
 		return UpdateInterviewScheduleUtils.convertInterviewSchedulerEntityIntoInterviewSchedulerDTO(interviewSchedulerEntity);
 	}
@@ -28,5 +28,6 @@ public class UpdateInterviewScheduleServiceImpl implements UpdateInterviewSchedu
 		logger.info("InterviewSchedulerEntity: " + interviewSchedulerEntity1);
 		return UpdateInterviewScheduleUtils.convertInterviewSchedulerEntityIntoInterviewSchedulerDTO(interviewSchedulerEntity1);
 	}
+
 	
 }
