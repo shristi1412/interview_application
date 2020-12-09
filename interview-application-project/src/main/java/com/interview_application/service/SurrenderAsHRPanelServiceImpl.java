@@ -8,7 +8,6 @@ import com.interview_application.dao.SurrenderHRPanelDAOImpl;
 import com.interview_application.dto.EmployeeDTO;
 import com.interview_application.dto.PanelMemberDTO;
 import com.interview_application.entity.EmployeeEntity;
-import com.interview_application.entity.PanelMemberEntity;
 import com.interview_application.exception.EmployeeNotFoundException;
 import com.interview_application.utilities.EmployeeUtils;
 
