@@ -19,3 +19,27 @@ ERROR | 2020-12-09 15:24:41 | [main] presentation.UpdateInterviewSchedule (Updat
 ERROR | 2020-12-09 15:24:41 | [main] presentation.UpdateInterviewSchedule (UpdateInterviewSchedule.java:27) - InterviewNotFoundException: Interview not found InterviewId: int1
 ERROR | 2020-12-09 15:27:26 | [main] presentation.UpdateInterviewSchedule (UpdateInterviewSchedule.java:27) - InterviewNotFoundException: Interview not found InterviewId: int1
 >>>>>>> f7bd69e9862cc41c444b2a3c6c1b3033324f7249
+ERROR | 2020-12-09 19:54:50 | [main] spi.SqlExceptionHelper (SqlExceptionHelper.java:142) - FATAL: password authentication failed for user "postgres"
+ERROR | 2020-12-09 19:57:36 | [main] spi.SqlExceptionHelper (SqlExceptionHelper.java:142) - FATAL: password authentication failed for user "postgres"
+ERROR | 2020-12-09 20:06:35 | [main] spi.SqlExceptionHelper (SqlExceptionHelper.java:142) - FATAL: password authentication failed for user "postgres"
+ERROR | 2020-12-09 20:09:06 | [main] spi.SqlExceptionHelper (SqlExceptionHelper.java:142) - FATAL: password authentication failed for user "postgres"
+ERROR | 2020-12-09 20:10:03 | [main] spi.SqlExceptionHelper (SqlExceptionHelper.java:142) - FATAL: password authentication failed for user "postgres"
+ERROR | 2020-12-09 20:10:34 | [main] spi.SqlExceptionHelper (SqlExceptionHelper.java:142) - FATAL: password authentication failed for user "postgres"
+ERROR | 2020-12-09 20:15:28 | [main] spi.SqlExceptionHelper (SqlExceptionHelper.java:142) - FATAL: password authentication failed for user "postgres"
+ERROR | 2020-12-09 20:17:29 | [main] spi.SqlExceptionHelper (SqlExceptionHelper.java:142) - FATAL: password authentication failed for user "postgres"
+ERROR | 2020-12-09 20:48:54 | [main] spi.SqlExceptionHelper (SqlExceptionHelper.java:142) - FATAL: password authentication failed for user "postgres"
+ERROR | 2020-12-09 20:53:30 | [main] spi.SqlExceptionHelper (SqlExceptionHelper.java:142) - FATAL: password authentication failed for user "postgres"
+ERROR | 2020-12-09 20:56:17 | [main] spi.SqlExceptionHelper (SqlExceptionHelper.java:142) - FATAL: password authentication failed for user "postgres"
+ERROR | 2020-12-09 21:01:51 | [main] spi.SqlExceptionHelper (SqlExceptionHelper.java:142) - FATAL: database "InterviewTracking" does not exist
+ERROR | 2020-12-09 21:04:08 | [main] spi.SqlExceptionHelper (SqlExceptionHelper.java:142) - ERROR: column candidatee0_.primaryskill does not exist
+  Hint: Perhaps you meant to reference the column "candidatee0_.primaryskills".
+  Position: 271
+ERROR | 2020-12-09 21:04:08 | [main] presentation.InterviewTracking (InterviewTracking.java:69) - CandidateNotFoundException: javax.persistence.PersistenceException: org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+ERROR | 2020-12-09 21:04:08 | [main] spi.SqlExceptionHelper (SqlExceptionHelper.java:142) - ERROR: column candidatee0_.primaryskill does not exist
+  Hint: Perhaps you meant to reference the column "candidatee0_.primaryskills".
+  Position: 271
+ERROR | 2020-12-09 21:04:08 | [main] presentation.InterviewTracking (InterviewTracking.java:69) - CandidateNotFoundException: javax.persistence.PersistenceException: org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+ERROR | 2020-12-09 21:04:09 | [main] spi.SqlExceptionHelper (SqlExceptionHelper.java:142) - ERROR: column candidatee0_.primaryskill does not exist
+  Hint: Perhaps you meant to reference the column "candidatee0_.primaryskills".
+  Position: 259
+ERROR | 2020-12-09 21:04:09 | [main] presentation.InterviewTracking (InterviewTracking.java:55) - CandidateNotFoundException: javax.persistence.PersistenceException: org.hibernate.exception.SQLGrammarException: could not extract ResultSet
