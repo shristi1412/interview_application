@@ -19,7 +19,7 @@ public class ViewACandidateTechServiceImpl implements ViewACandidateTechService{
 	
 	public Candidate findById(String candidateid) throws CandidateNotFoundTechException {
 		CandidateEntity candidateEntity = viewACandidateTechDAO.findById(candidateid);
-		logger.info("CandidateEntity: " + candidateEntity.getCandidateID()+ "Name="+ candidateEntity.getCandidatename()+"Status="+candidateEntity.getInterviewSchedulerEntity());
+		logger.info("CandidateEntity: " + candidateEntity.getCandidateid()+ "Name="+ candidateEntity.getCandidatename()+"Status="+candidateEntity.getInterviewSchedulerEntity());
 		return InterviewTrackingViewACandidateTechUtils.convertCandidateEntityIntoCandidate(candidateEntity);
 	}
 

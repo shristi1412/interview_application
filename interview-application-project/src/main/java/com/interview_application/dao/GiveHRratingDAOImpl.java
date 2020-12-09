@@ -9,6 +9,7 @@ import org.apache.logging.log4j.Logger;
 
 import com.interview_application.dao.GiveTechRatingDAOImpl;
 import com.interview_application.entity.CandidateEntity;
+import com.interview_application.exception.CandidateNotFoundTechException;
 import com.interview_application.exceptions.CandidateNotFoundException;
 
 public class GiveHRratingDAOImpl implements GiveHRratingDAO{
@@ -19,11 +20,11 @@ public class GiveHRratingDAOImpl implements GiveHRratingDAO{
 		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("ShopCartAppPU");
 		entityManager = entityManagerFactory.createEntityManager();
 	}
-	public CandidateEntity findById(int candidateID) throws CandidateNotFoundException {
+	public CandidateEntity findById(int candidateID) throws CandidateNotFoundTechException {
 		CandidateEntity candidateEntity = entityManager.find(CandidateEntity.class, candidateID);
 		logger.info("Database returned CandidateEntity: " + candidateEntity);
 		if(candidateEntity==null)
-			throw new CandidateNotFoundException("CandidateId: " + candidateID);
+			throw new CandidateNotFoundTechException("CandidateId: " + candidateID);
 		return candidateEntity;
 	}
 
