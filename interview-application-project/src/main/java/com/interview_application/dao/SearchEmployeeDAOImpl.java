@@ -22,7 +22,7 @@ public class SearchEmployeeDAOImpl implements SearchEmployeeDAO{
 		entityManager = entityManagerFactory.createEntityManager();
 	}
 	//by id
-	public EmployeeEntity searchById(String empID) throws EmployeeNotFoundException {
+	public EmployeeEntity searchById(int empID) throws EmployeeNotFoundException {
 		EmployeeEntity empEntity = entityManager.find(EmployeeEntity.class, empID);
 		logger.info("Database returned Employee: " + empEntity);
 		if(empEntity==null)
@@ -30,7 +30,7 @@ public class SearchEmployeeDAOImpl implements SearchEmployeeDAO{
 		return empEntity;
 	}
 	//by name
-	public String id;
+	public int id;
 	public EmployeeEntity searchByName(String name) throws EmployeeNotFoundException {
 		Query list = entityManager.createQuery("SELECT e FROM EmployeeEntity e");
 		List<EmployeeEntity> emplist = list.getResultList();

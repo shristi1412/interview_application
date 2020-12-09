@@ -12,13 +12,11 @@ public class SearchEmployeeController {
 	//BY ID
 	private static Logger logger = LogManager.getLogger(SearchEmployeeController.class.getName());
 	SearchEmployeeService empService = new SearchEmployeeServiceImpl();
-	public EmployeeDTO searchById(String empID) throws EmployeeNotFoundException {
-		empID = empID.toLowerCase();
+	public EmployeeDTO searchById(int empID) throws EmployeeNotFoundException {
 		logger.info("Finding employee with Employee ID : " + empID);
 		EmployeeDTO emp = null;
-		String regex="^[emp]+[0-9]$";
-		if(empID.matches(regex)==false&&empID.length()!=8) {
-			logger.error("Employee ID Format is invalid ['empXXXXX' where X is int]: ");
+		if(Integer.toString(empID).length()!=8) {
+			logger.error("Employee ID Format is invalid ['XXXXXXXX' where X is int]: ");
 			return null;
 		}
 		try {

@@ -1,48 +1,44 @@
 package com.interview_application.entity;
 
-import javax.persistence.CascadeType;
+import java.io.Externalizable;
+import java.io.IOException;
+import java.io.ObjectInput;
+import java.io.ObjectOutput;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+
 
 @Entity
 @Table(name="employee")
-public class EmployeeEntity {
+public class EmployeeEntity implements Externalizable{
 	@Id
-	@GeneratedValue
+//	@GeneratedValue
 	@Column(name="employeeid")
 	private int employeeid;
 	@Column(name="name")
 	private String name;
 	
-
-	@OneToOne(cascade={CascadeType.ALL},
-			fetch=FetchType.EAGER, optional = false)
-	@JoinColumn(name="emailid")
-	private PanelMemberEntity panelMemberEntity;
-	
 	public EmployeeEntity() {
 		super();
 	}
 
-	public EmployeeEntity(int employeeid, String name, PanelMemberEntity panelMemberEntity) {
+	public EmployeeEntity(int employeeID, String name) {
 		super();
-		this.employeeid = employeeid;
+		this.employeeid = employeeID;
 		this.name = name;
-		this.panelMemberEntity = panelMemberEntity;
 	}
 
-	public int getEmployeeid() {
+	public int getEmployeeID() {
 		return employeeid;
 	}
 
-	public void setEmployeeid(int employeeid) {
-		this.employeeid = employeeid;
+	public void setEmployeeID(int employeeID) {
+		this.employeeid = employeeID;
 	}
 
 	public String getName() {
@@ -52,19 +48,23 @@ public class EmployeeEntity {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
-	public PanelMemberEntity getPanelMemberEntity() {
-		return panelMemberEntity;
-	}
 
-	public void setPanelMemberEntity(PanelMemberEntity panelMemberEntity) {
-		this.panelMemberEntity = panelMemberEntity;
-	}
 
 	@Override
 	public String toString() {
-		return "EmployeeEntity [employeeid=" + employeeid + ", name=" + name + "panelMemberEntity ="+ panelMemberEntity+"]";
+		return "EmployeeEntity [employeeID=" + employeeid + ", name=" + name + "]";
 	}
+
+	public void readExternal(ObjectInput arg0) throws IOException, ClassNotFoundException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void writeExternal(ObjectOutput arg0) throws IOException {
+		// TODO Auto-generated method stub
+		
+	}
+
 	
 	
 	

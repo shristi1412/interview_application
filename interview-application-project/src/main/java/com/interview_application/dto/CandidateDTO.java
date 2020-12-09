@@ -4,22 +4,14 @@ import javax.persistence.Column;
 
 public class CandidateDTO {
 
-	private String candidateid;
-	@Column(name="candidatename")
+	private int candidateid;
 	private String candidatename;
-	@Column(name="location")
 	private String location;
-	@Column(name="designation")
 	private String designation;
-	@Column(name="qualification")
 	private String qualification;
-	@Column(name="experience")
 	private int experience;
-	@Column(name="noticeperiod")
 	private int noticeperiod;
-	@Column(name="primaryskills")
 	private String primaryskills;
-	@Column(name="secondaryskills")
 	private String secondaryskills;
 	
 	
@@ -28,7 +20,7 @@ public class CandidateDTO {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public CandidateDTO(String candidateid, String candidatename, String location, String designation,
+	public CandidateDTO(int candidateid, String candidatename, String location, String designation,
 			String qualification, int experience, int noticeperiod, String primaryskills, String secondaryskills) {
 		super();
 		this.candidateid = candidateid;
@@ -42,7 +34,7 @@ public class CandidateDTO {
 		this.secondaryskills = secondaryskills;
 	}
 	
-	public String getCandidateID() {
+	public int getCandidateID() {
 		return candidateid;
 	}
 	public String getCandidatename() {
@@ -69,7 +61,7 @@ public class CandidateDTO {
 	public String getSecondaryskills() {
 		return secondaryskills;
 	}
-	public void setCandidateID(String candidateID) {
+	public void setCandidateID(int candidateID) {
 		this.candidateid = candidateID;
 	}
 	public void setCandidatename(String candidatename) {

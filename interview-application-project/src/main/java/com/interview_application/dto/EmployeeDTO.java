@@ -1,38 +1,37 @@
 package com.interview_application.dto;
 
+import java.io.IOException;
+import java.io.ObjectInput;
+import java.io.ObjectOutput;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
-import com.interview_application.entity.EmployeeEntity;
 import com.interview_application.entity.InterviewSchedulerEntity;
-import com.interview_application.entity.PanelMemberEntity;
 
 public class EmployeeDTO {
 	private int employeeid;
 	private String name;
-	private PanelMemberEntity panelMemberEntity;
 	
 	public EmployeeDTO() {
 		super();
 	}
 
-	public EmployeeDTO(int employeeid, String name, PanelMemberEntity panelMemberEntity)
- {
+	public EmployeeDTO(int employeeID, String name) {
 		super();
-		this.employeeid = employeeid;
+		this.employeeid = employeeID;
 		this.name = name;
-		this.panelMemberEntity = panelMemberEntity;
 	}
-	
 
-	public int getEmployeeid() {
+	public int getEmployeeID() {
 		return employeeid;
 	}
 
-	public void setEmployeeid(int employeeid) {
-		this.employeeid = employeeid;
+	public void setEmployeeID(int employeeID) {
+		this.employeeid = employeeID;
 	}
 
 	public String getName() {
@@ -43,18 +42,19 @@ public class EmployeeDTO {
 		this.name = name;
 	}
 
-	public PanelMemberEntity getPanelMemberEntity() {
-		return panelMemberEntity;
-	}
-
-	public void setPanelMemberEntity(PanelMemberEntity panelMemberEntity) {
-		this.panelMemberEntity = panelMemberEntity;
-	}
 
 	@Override
 	public String toString() {
-		return "EmployeeEntity [employeeid=" + employeeid + ", name=" + name + ", panelMemberEntity="
-				+ panelMemberEntity + "]";
+		return "EmployeeEntity [employeeID=" + employeeid + ", name=" + name + "]";
 	}
 
+	public void readExternal(ObjectInput arg0) throws IOException, ClassNotFoundException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void writeExternal(ObjectOutput arg0) throws IOException {
+		// TODO Auto-generated method stub
+		
+	}
 }

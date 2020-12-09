@@ -1,5 +1,4 @@
 package com.interview_application.entity;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -7,14 +6,16 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
 
 @Entity
 @Table(name="panelmember")
 public class PanelMemberEntity {
 	@Id
-	@GeneratedValue
+//	@GeneratedValue
 	@Column(name="panelid")
 	private int panelid;
 	
@@ -23,31 +24,58 @@ public class PanelMemberEntity {
 	
 	@Column(name="type")
 	private String type;
-		
+	
+	@OneToOne(cascade={CascadeType.ALL},
+			fetch=FetchType.EAGER, optional = false)
+	@JoinColumn(name="employeeid")
+	private EmployeeEntity employeeIDpanel;
+	@ManyToOne(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+	@JoinColumn(name="interviewid")
+	private InterviewSchedulerEntity panelIDinterview;
+	
 	public PanelMemberEntity() {
 		super();
 	}
 	
-	public PanelMemberEntity(int panelid, String location, String type) {
+	public PanelMemberEntity(int panelid, String location, String type, EmployeeEntity employeeID,InterviewSchedulerEntity panelIDinterview) {
 		super();
 		this.panelid = panelid;
 		this.location = location;
 		this.type = type;
+		this.employeeIDpanel = employeeID;
+		this.panelIDinterview = panelIDinterview;
 	}
 
-
-	@Override
-	public String toString() {
-		return "PanelMemberEntity [panelid=" + panelid + ", location=" + location + ", type=" + type + ", employeeID="
-				 + "]";
+	public PanelMemberEntity(int panelid, String location, String type, EmployeeEntity employeeID) {
+		super();
+		this.panelid = panelid;
+		this.location = location;
+		this.type = type;
+		this.employeeIDpanel = employeeID;
+	}
+	
+	public InterviewSchedulerEntity getemailIDInterview() {
+		return panelIDinterview;
 	}
 
-	public int getPanelid() {
+	public void setemailIDInterview(InterviewSchedulerEntity candidateInterview) {
+		this.panelIDinterview = candidateInterview;
+	}
+
+	public EmployeeEntity getEmployeeIDpanel() {
+		return employeeIDpanel;
+	}
+
+	public void setEmployeeIDpanel(EmployeeEntity employeeIDpanel) {
+		this.employeeIDpanel = employeeIDpanel;
+	}
+
+	public int getPanelID() {
 		return panelid;
 	}
 
-	public void setPanelid(int panelid) {
-		this.panelid = panelid;
+	public void setPanelID(int emailID) {
+		this.panelid = emailID;
 	}
 
 	public String getLocation() {
@@ -64,6 +92,20 @@ public class PanelMemberEntity {
 
 	public void setType(String type) {
 		this.type = type;
+	}
+
+	public EmployeeEntity getEmployeeID() {
+		return employeeIDpanel;
+	}
+
+	public void setEmployeeID(EmployeeEntity employeeID) {
+		this.employeeIDpanel = employeeID;
+	}
+
+	@Override
+	public String toString() {
+		return "PanelMemberEntity [panelid=" + panelid + ", location=" + location + ", type=" + type
+				+ ", employeeIDpanel=" + employeeIDpanel + ", panelIDinterview=" + panelIDinterview + "]";
 	}
 
 

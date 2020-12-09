@@ -21,20 +21,17 @@ public class AddPanelMemberDAOImpl implements AddPanelMemberDAO{
 		entityManager = entityManagerFactory.createEntityManager();
 	}
 	public PanelMemberEntity PMEntity;
-	public PanelMemberEntity addPanelMember(String emailID, String location, String type, EmployeeEntity empID) throws EmployeeNotFoundException {
-		EmployeeEntity emp = entityManager.find(EmployeeEntity.class, empID.getEmployeeid());
-		System.out.println(emp);
-		if(emp==null) {
-			throw new EmployeeNotFoundException("Id: " + empID);
-		}
-		else {
-			entityManager.getTransaction().begin();
-			PMEntity = new PanelMemberEntity();			
-			logger.info("Employee with EMP ID : " + emp + " has been added as a Panel Member");
-			entityManager.persist(PMEntity);
-			logger.info("Adding Emp : " +PMEntity+" as a Panel member");
-			entityManager.getTransaction().commit();
-		}
+	public PanelMemberEntity addPanelMember(int panelid, String location, String type, EmployeeEntity empID) throws EmployeeNotFoundException {
+		EmployeeEntity emp = entityManager.find(EmployeeEntity.class, empID.getEmployeeID());
+		System.out.println(empID);
+
+		entityManager.getTransaction().begin();
+		PMEntity = new PanelMemberEntity(panelid, location, type, empID, null);			
+		logger.info("Employee with EMP ID : " + emp + " has been added as a Panel Member");
+		entityManager.persist(PMEntity);
+
+		logger.info("Adding Emp : " +PMEntity+" as a Panel member");
+		entityManager.getTransaction().commit();
 		return PMEntity;
 	}
 	

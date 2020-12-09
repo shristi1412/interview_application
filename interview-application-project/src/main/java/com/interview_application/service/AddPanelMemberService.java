@@ -5,7 +5,6 @@ import com.interview_application.entity.EmployeeEntity;
 import com.interview_application.exception.EmployeeNotFoundException;
 
 public interface AddPanelMemberService {
-	PanelMemberDTO addPanelMember(String emailID, String location, String type, EmployeeEntity empID) throws EmployeeNotFoundException;
-
+	PanelMemberDTO addPanelMember(int panelid, String location, String type, EmployeeEntity empID) throws EmployeeNotFoundException;
 
 }

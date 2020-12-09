@@ -15,7 +15,7 @@ public class SearchEmployeeServiceImpl implements SearchEmployeeService{
 	
 	SearchEmployeeDAO empDao = new SearchEmployeeDAOImpl();
 	//By ID
-	public EmployeeDTO searchById(String empID) throws EmployeeNotFoundException{
+	public EmployeeDTO searchById(int empID) throws EmployeeNotFoundException{
 		EmployeeEntity emp = empDao.searchById(empID);
 		logger.info("EmployeeEntity: " + emp);
 		return EmployeeUtils.convertItemEntityIntoItem(emp);

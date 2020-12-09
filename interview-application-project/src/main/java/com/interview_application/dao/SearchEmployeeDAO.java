@@ -4,6 +4,6 @@ import com.interview_application.entity.EmployeeEntity;
 import com.interview_application.exception.EmployeeNotFoundException;
 
 public interface SearchEmployeeDAO {
-	EmployeeEntity searchById(String empID) throws EmployeeNotFoundException;
+	EmployeeEntity searchById(int empID) throws EmployeeNotFoundException;
 	EmployeeEntity searchByName(String name) throws EmployeeNotFoundException;
 }

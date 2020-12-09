@@ -18,8 +18,8 @@ public class AddPanelMemberServiceImpl implements AddPanelMemberService{
 	AddPanelMemberDAO panelmemberdao = new AddPanelMemberDAOImpl();
 	
 	
-	public PanelMemberDTO addPanelMember(String emailID, String location, String type, EmployeeEntity empID) throws EmployeeNotFoundException{
-		PanelMemberEntity PMEntity = panelmemberdao.addPanelMember(emailID, location, type, empID);
+	public PanelMemberDTO addPanelMember(int panelid, String location, String type, EmployeeEntity empID) throws EmployeeNotFoundException{
+		PanelMemberEntity PMEntity = panelmemberdao.addPanelMember(panelid, location, type, empID);
 		logger.info("ItemEntity: " + PMEntity);
 		return PanelMemberUtils.convertItemEntityIntoItem(PMEntity);
 	}

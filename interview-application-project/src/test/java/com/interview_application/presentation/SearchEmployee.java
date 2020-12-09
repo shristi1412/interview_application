@@ -21,13 +21,13 @@ public class SearchEmployee {
 	@Test
 	public void testIDSimple() throws EmployeeNotFoundException{
 		logger.info("[START] testIDSimple()");
-		assertNotNull("Employee Found", searchEmployeeController.searchById("emp85015"));
+		assertNotNull("Employee Found", searchEmployeeController.searchById(45010101));
 		logger.info("[END] testIDSimple()");
 	}
 	@Test
 	public void testIDIncorrect() throws EmployeeNotFoundException{
 		logger.info("[START] testIDIncorrect()");
-		assertNotNull("Employee Found", searchEmployeeController.searchById("emp00000"));
+		assertNotNull("Employee Found", searchEmployeeController.searchById(45010105));
 		logger.info("[END] testIDIncorrect()");
 	}
 	@Test
@@ -40,7 +40,7 @@ public class SearchEmployee {
 	public void testNameIncorrect() throws EmployeeNotFoundException{
 		logger.info("[START] testNameIncorrect()");
 		try {
-			assertNotNull("Item Found", searchEmployeeController.searchByName("Atul"));
+			assertNotNull("Item Found", searchEmployeeController.searchByName("Rahul"));
 		}
 		catch(EmployeeNotFoundException e) {
 			logger.info("Employee Name is incorrect");
@@ -48,15 +48,9 @@ public class SearchEmployee {
 		logger.info("[END] testNameIncorrect()");
 	}
 	@Test
-	public void testIDCaseInsensitive() throws EmployeeNotFoundException{
-		logger.info("[START] testIDCaseInsensitive()");
-		assertNotNull("Item Found", searchEmployeeController.searchById("eMp85015"));
-		logger.info("[END] testIDCaseInsensitive()");
-	}
-	@Test
 	public void testInvalidIDFormat() throws EmployeeNotFoundException{
 		logger.info("[START] testInvalidIDFormat()");
-		assertNotNull("Item Found", searchEmployeeController.searchById("ABC015"));
+		assertNotNull("Item Found", searchEmployeeController.searchById(0151501));
 		logger.info("[END] testInvalidIDFormat()");
 	}
 }
