@@ -20,11 +20,11 @@ public class CancelInterviewDAOImpl implements CancelInterviewDAO{
 		entityManager = entityManagerFactory.createEntityManager();
 	}
 	
-	public InterviewSchedulerEntity findById(String interviewId) throws InterviewNotFoundException {
-		InterviewSchedulerEntity interviewSchedulerEntity = entityManager.find(InterviewSchedulerEntity.class, interviewId);
+	public InterviewSchedulerEntity findById(String interviewid) throws InterviewNotFoundException {
+		InterviewSchedulerEntity interviewSchedulerEntity = entityManager.find(InterviewSchedulerEntity.class, interviewid);
 		logger.info("Database returned InterviewSchedulerEntity: " + interviewSchedulerEntity);
 		if(interviewSchedulerEntity==null)
-			throw new InterviewNotFoundException("InterviewId: " + interviewId);
+			throw new InterviewNotFoundException("InterviewId: " + interviewid);
 		return interviewSchedulerEntity;
 	}
 }

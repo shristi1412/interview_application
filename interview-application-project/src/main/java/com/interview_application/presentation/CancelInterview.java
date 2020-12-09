@@ -15,11 +15,11 @@ public class CancelInterview {
 	private static Logger logger = LogManager.getLogger(UpdateInterviewSchedule.class.getName());
 	UpdateInterviewScheduleService itemService = new UpdateInterviewScheduleServiceImpl();
 	
-	public InterviewSchedulerEntity findItemById(int interviewID) throws InterviewNotFoundException {
-		logger.info("Finding interviewId: " + interviewID);
+	public InterviewSchedulerEntity findItemById(String interviewid) throws InterviewNotFoundException {
+		logger.info("Finding interviewId: " + interviewid);
 		InterviewSchedulerEntity interviewSchedulerEntity = null;
 		try {
-			interviewSchedulerEntity = itemService.findById(interviewID);
+			interviewSchedulerEntity = itemService.findById(interviewid);
 		}
 		catch(Exception e) {
 			logger.error("InterviewNotFoundException: " + e);

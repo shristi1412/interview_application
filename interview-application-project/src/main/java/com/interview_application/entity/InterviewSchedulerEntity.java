@@ -19,7 +19,7 @@
 		@Id
 		@GeneratedValue
 		@Column(name="interviewid")
-		private int interviewID;
+		private String interviewid;
 		@Column(name="techrating")
 		private int techrating;
 		@Column(name="hrrating")
@@ -30,50 +30,51 @@
 		private int finalstatus;
 		@OneToOne(cascade={CascadeType.ALL},
 				fetch=FetchType.EAGER, optional = false)
-		@JoinColumn(name="employeeID")
-		private String employeeIDinter;
+		@JoinColumn(name="employeeid")
+		private EmployeeEntity employeeid;
+		
 		@OneToOne(cascade={CascadeType.ALL},
 				fetch=FetchType.EAGER, optional = false)
-		@JoinColumn(name="candidateID")
-		private String cadidateIDinter;
+		@JoinColumn(name="candidateid")
+		private CandidateEntity cadidateid;
 		public InterviewSchedulerEntity() {
 			super();
 			// TODO Auto-generated constructor stub
 		}
 		
-		public InterviewSchedulerEntity(int interviewID, int techrating, int hrrating) {
+		public InterviewSchedulerEntity(String interviewid, int techrating, int hrrating) {
 			super();
-			this.interviewID = interviewID;
+			this.interviewid = interviewid;
 			this.techrating = techrating;
 			this.hrrating = hrrating;
 		}
 
-	public InterviewSchedulerEntity(int interviewID) {
+	public InterviewSchedulerEntity(String interviewid) {
 			super();
-			this.interviewID = interviewID;
+			this.interviewid = interviewid;
 		}
 	
-		public InterviewSchedulerEntity(int interviewID, int techrating, int hrrating, int location,
-				int finalstatus, String employeeIDinter, String cadidateIDinter) {
+		public InterviewSchedulerEntity(String interviewid, int techrating, int hrrating, int location,
+				int finalstatus, EmployeeEntity employeeid, CandidateEntity cadidateid) {
 			super();
-			this.interviewID = interviewID;
+			this.interviewid = interviewid;
 			this.techrating = techrating;
 			this.hrrating = hrrating;
 			this.location = location;
 			this.finalstatus = finalstatus;
-			this.employeeIDinter = employeeIDinter;
-			this.cadidateIDinter = cadidateIDinter;
+			this.employeeid = employeeid;
+			this.cadidateid = cadidateid;
 		}
 		@Override
 		public String toString() {
-			return "InterviewSchedulerEntity [interviewID=" + interviewID + ", techrating=" + techrating + ", hrrating=" + hrrating + ", location=" + location + ", finalstatus="
-					+ finalstatus + ", employeeIDinter=" + employeeIDinter + ", cadidateIDinter=" + cadidateIDinter + "]";
+			return "InterviewSchedulerEntity [interviewid=" + interviewid + ", techrating=" + techrating + ", hrrating=" + hrrating + ", location=" + location + ", finalstatus="
+					+ finalstatus + ", employeeid=" + employeeid + ", cadidateid=" + cadidateid + "]";
 		}
-		public int getInterviewID() {
-			return interviewID;
+		public String getInterviewID() {
+			return interviewid;
 		}
-		public void setInterviewID(int interviewID) {
-			this.interviewID = interviewID;
+		public void setInterviewID(String interviewid) {
+			this.interviewid = interviewid;
 		}
 		public int getTechrating() {
 			return techrating;
@@ -99,17 +100,17 @@
 		public void setFinalstatus(int finalstatus) {
 			this.finalstatus = finalstatus;
 		}
-		public String getEmployeeIDinter() {
-			return employeeIDinter;
+		public EmployeeEntity getEmployeeid() {
+			return employeeid;
 		}
-		public void setEmployeeIDinter(String employeeIDinter) {
-			this.employeeIDinter = employeeIDinter;
+		public void setEmployeeIDinter(EmployeeEntity employeeid) {
+			this.employeeid = employeeid;
 		}
-		public String getCadidateIDinter() {
-			return cadidateIDinter;
+		public CandidateEntity getCadidateID() {
+			return cadidateid;
 		}
-		public void setCadidateIDinter(String cadidateIDinter) {
-			this.cadidateIDinter = cadidateIDinter;
+		public void setCadidateID(CandidateEntity cadidateid) {
+			this.cadidateid = cadidateid;
 		}
 	}
 		

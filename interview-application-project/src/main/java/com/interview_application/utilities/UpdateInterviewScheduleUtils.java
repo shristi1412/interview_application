@@ -9,6 +9,6 @@ public class UpdateInterviewScheduleUtils {
 		return new InterviewSchedulerEntity(interview.getInterviewID(),interview.getTechrating(),interview.getHrrating());
 	}
 	public static InterviewSchedulerDTO convertInterviewSchedulerDTOIntoInterviewSchedulerEntity(InterviewSchedulerDTO interview) {
-		return new InterviewSchedulerDTO(interview.getInterviewID(),interview.getTechrating(),interview.getHrrating());
+		return new InterviewSchedulerDTO(interview.getInterviewid(),interview.getTechrating(),interview.getHrrating());
 	}
 }

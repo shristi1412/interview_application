@@ -19,23 +19,34 @@ public class InterviewSchedulerDTO {
 	private int hrrating;
 	private int location;
 	private int finalstatus;
-	private EmployeeEntity employeeIDinter;
-	private CandidateEntity candidateIDinter;
+	private EmployeeEntity employeeid;
+	private CandidateEntity candidateid;
 	private Set<PanelMemberEntity> emailIDinter;
-	public InterviewSchedulerDTO() {
+	
+	
+	
+	public InterviewSchedulerDTO(String interviewid) {
 		super();
-		// TODO Auto-generated constructor stub
+		this.interviewid = interviewid;	
+	}
+	
+	public InterviewSchedulerDTO(String interviewid, int techrating, int hrrating) {
+		super();
+		this.interviewid = interviewid;
+		this.techrating = techrating;
+		this.hrrating = hrrating;
+		
 	}
 	public InterviewSchedulerDTO(String interviewid, int techrating, int hrrating, int location, int finalstatus,
-			EmployeeEntity employeeIDinter, CandidateEntity candidateIDinter, Set<PanelMemberEntity> emailIDinter) {
+			EmployeeEntity employeeid, CandidateEntity candidateid, Set<PanelMemberEntity> emailIDinter) {
 		super();
 		this.interviewid = interviewid;
 		this.techrating = techrating;
 		this.hrrating = hrrating;
 		this.location = location;
 		this.finalstatus = finalstatus;
-		this.employeeIDinter = employeeIDinter;
-		this.candidateIDinter = candidateIDinter;
+		this.employeeid = employeeid;
+		this.candidateid = candidateid;
 		this.emailIDinter = emailIDinter;
 	}
 	public String getInterviewid() {
@@ -53,11 +64,11 @@ public class InterviewSchedulerDTO {
 	public int getFinalstatus() {
 		return finalstatus;
 	}
-	public EmployeeEntity getEmployeeIDinter() {
-		return employeeIDinter;
+	public EmployeeEntity getEmployeeid() {
+		return employeeid;
 	}
-	public CandidateEntity getCandidateIDinter() {
-		return candidateIDinter;
+	public CandidateEntity getCandidateid() {
+		return candidateid;
 	}
 	public Set<PanelMemberEntity> getEmailIDinter() {
 		return emailIDinter;
@@ -77,11 +88,11 @@ public class InterviewSchedulerDTO {
 	public void setFinalstatus(int finalstatus) {
 		this.finalstatus = finalstatus;
 	}
-	public void setEmployeeIDinter(EmployeeEntity employeeIDinter) {
-		this.employeeIDinter = employeeIDinter;
+	public void setEmployeeid(EmployeeEntity employeeid) {
+		this.employeeid = employeeid;
 	}
-	public void setCandidateIDinter(CandidateEntity candidateIDinter) {
-		this.candidateIDinter = candidateIDinter;
+	public void setCandidateIDinter(CandidateEntity candidateid) {
+		this.candidateid = candidateid;
 	}
 	public void setEmailIDinter(Set<PanelMemberEntity> emailIDinter) {
 		this.emailIDinter = emailIDinter;
@@ -89,7 +100,8 @@ public class InterviewSchedulerDTO {
 	@Override
 	public String toString() {
 		return "InterviewSchedulerEntity [interviewid=" + interviewid + ", techrating=" + techrating + ", hrrating="
-				+ hrrating + ", location=" + location + ", finalstatus=" + finalstatus + ", employeeIDinter="
-				+ employeeIDinter + ", candidateIDinter=" + candidateIDinter + ", emailIDinter=" + emailIDinter + "]";
+				+ hrrating + ", location=" + location + ", finalstatus=" + finalstatus + ", employeeid="
+				+ employeeid + ", candidateid=" + candidateid + ", emailIDinter=" + emailIDinter + "]";
 	}
+	
 }

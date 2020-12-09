@@ -17,8 +17,8 @@ public class CancelInterviewServiceImpl implements CancelInterviewService {
 	private static Logger logger = LogManager.getLogger( UpdateInterviewScheduleServiceImpl.class.getName());
 	UpdateInterviewScheduleDAO interviewDao = new UpdateInterviewScheduleDAOImpl();
 	
-	public InterviewSchedulerEntity findById(int interviewID) throws InterviewNotFoundException {
-		InterviewSchedulerEntity interviewSchedulerEntity = interviewDao.findById(interviewID);
+	public InterviewSchedulerEntity findById(String interviewid) throws InterviewNotFoundException {
+		InterviewSchedulerEntity interviewSchedulerEntity = interviewDao.findById(interviewid);
 		logger.info("InterviewSchedulerEntity: " + interviewSchedulerEntity);
 		return UpdateInterviewScheduleUtils.convertInterviewSchedulerEntityIntoInterviewSchedulerDTO(interviewSchedulerEntity);
 	}
