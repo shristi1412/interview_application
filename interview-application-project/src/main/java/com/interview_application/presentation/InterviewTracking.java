@@ -18,7 +18,7 @@ public class InterviewTracking {
 	CandidateService candidateService = new CandidateServiceImpl();
 	
 	public void addCandidate(CandidateEntity candidateEntity)throws CandidateNotFoundException{
-		logger.info("Inserting candidate for candidateID: "+ candidateEntity.getCandidateID());
+		logger.info("Inserting candidate for candidateID: "+ candidateEntity.getCandidateid());
 		try {
 			candidateService.addCandidate(candidateEntity);
 		}catch(Exception e)

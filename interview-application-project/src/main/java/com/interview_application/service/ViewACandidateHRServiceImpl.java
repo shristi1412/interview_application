@@ -15,7 +15,7 @@ public class ViewACandidateHRServiceImpl implements ViewACandidateHRService{
 	private static Logger logger = LogManager.getLogger(ViewACandidateHRServiceImpl.class.getName());
 	ViewACandidateHRDAO viewACandidateHRDAO = new ViewACandidateHRDAOImpl();
 	
-	public Candidate findById(String candidateid) throws CandidateNotFoundException {
+	public Candidate findById(int candidateid) throws CandidateNotFoundException {
 		CandidateEntity candidateEntity = viewACandidateHRDAO.findById(candidateid);
 		logger.info("CandidateEntity: " + candidateEntity);
 		return ViewCandidateForHRUtils.convertCandidateEntityIntoCandidate(candidateEntity);

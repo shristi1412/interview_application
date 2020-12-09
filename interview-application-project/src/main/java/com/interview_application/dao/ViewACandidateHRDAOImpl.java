@@ -20,7 +20,7 @@ public class ViewACandidateHRDAOImpl implements ViewACandidateHRDAO{
 		entityManager= entityManagerFactory.createEntityManager();	
 	}
 	
-	public CandidateEntity findById(String candidateid) throws CandidateNotFoundException{
+	public CandidateEntity findById(int candidateid) throws CandidateNotFoundException{
 		
 		CandidateEntity candidateEntity=entityManager.find(CandidateEntity.class, candidateid);
 		if (candidateEntity == null) {

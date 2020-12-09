@@ -25,14 +25,13 @@ public class GiveRatingsDAOImpl {
 		}
 		
 		public InterviewSchedulerEntity addPanelMember() throws NullPointerException {
-			InterviewSchedulerEntity	 PMEntity = entityManager.find(InterviewSchedulerEntity.class, "some var");
+			InterviewSchedulerEntity  PMEntity = entityManager.find(InterviewSchedulerEntity.class, "some var");
 			logger.info("Database returned ItemEntity: " + PMEntity);
 			if(PMEntity==null)
 				throw new NullPointerException("ItemId: " + "some var");
 			return PMEntity;
 		}
-		
-	}
+	
 
 	}
 

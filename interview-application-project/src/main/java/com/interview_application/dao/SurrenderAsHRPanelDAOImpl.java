@@ -21,15 +21,17 @@ public class SurrenderAsHRPanelDAOImpl implements SurrenderAsHRPanelDAO{
 		entityManager= entityManagerFactory.createEntityManager();	
 	}
 	
-	public EmployeeEntity findById(String employeeID) throws EmployeeNotFoundException{
+	public EmployeeEntity findById(int employeeid) throws EmployeeNotFoundException{
 		
-		EmployeeEntity employeeEntity=entityManager.find(EmployeeEntity.class, employeeID);
+		boolean flag = false;
+		
+		EmployeeEntity employeeEntity=entityManager.find(EmployeeEntity.class, employeeid);
 		if (employeeEntity == null) {
-			throw new EmployeeNotFoundException("Employee id "+employeeID+"not found");
+			throw new EmployeeNotFoundException("Employee id "+employeeid+"not found");
 		}
 		employeeEntity.getPanelMemberEntity().setType(null);
+		flag = true;
 		return employeeEntity;
-		
 	}
 
 }

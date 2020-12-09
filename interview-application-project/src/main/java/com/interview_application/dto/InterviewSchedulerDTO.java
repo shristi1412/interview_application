@@ -1,55 +1,32 @@
 package com.interview_application.dto;
 
-import java.util.Set;
-
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-
-import com.interview_application.entity.CandidateEntity;
-import com.interview_application.entity.EmployeeEntity;
-import com.interview_application.entity.PanelMemberEntity;
-
 public class InterviewSchedulerDTO {
-	private String interviewid;
+	private int interviewid;
 	private int techrating;
 	private int hrrating;
 	private int location;
 	private int finalstatus;
-	private EmployeeEntity employeeid;
-	private CandidateEntity candidateid;
-	private Set<PanelMemberEntity> emailIDinter;
-	
-	
-	
-	public InterviewSchedulerDTO(String interviewid) {
+	public InterviewSchedulerDTO() {
 		super();
-		this.interviewid = interviewid;	
+		// TODO Auto-generated constructor stub
 	}
-	
-	public InterviewSchedulerDTO(String interviewid, int techrating, int hrrating) {
-		super();
-		this.interviewid = interviewid;
-		this.techrating = techrating;
-		this.hrrating = hrrating;
-		
-	}
-	public InterviewSchedulerDTO(String interviewid, int techrating, int hrrating, int location, int finalstatus,
-			EmployeeEntity employeeid, CandidateEntity candidateid, Set<PanelMemberEntity> emailIDinter) {
+	public InterviewSchedulerDTO(int interviewid, int techrating, int hrrating, int location, int finalstatus) {
 		super();
 		this.interviewid = interviewid;
 		this.techrating = techrating;
 		this.hrrating = hrrating;
 		this.location = location;
 		this.finalstatus = finalstatus;
-		this.employeeid = employeeid;
-		this.candidateid = candidateid;
-		this.emailIDinter = emailIDinter;
 	}
-	public String getInterviewid() {
+	
+	
+	
+	@Override
+	public String toString() {
+		return "InterviewSchedulerEntity [interviewid=" + interviewid + ", techrating=" + techrating + ", hrrating="
+				+ hrrating + ", location=" + location + ", finalstatus=" + finalstatus + "]";
+	}
+	public int getInterviewid() {
 		return interviewid;
 	}
 	public int getTechrating() {
@@ -63,17 +40,8 @@ public class InterviewSchedulerDTO {
 	}
 	public int getFinalstatus() {
 		return finalstatus;
-	}
-	public EmployeeEntity getEmployeeid() {
-		return employeeid;
-	}
-	public CandidateEntity getCandidateid() {
-		return candidateid;
-	}
-	public Set<PanelMemberEntity> getEmailIDinter() {
-		return emailIDinter;
-	}
-	public void setInterviewid(String interviewid) {
+	}	
+	public void setInterviewid(int interviewid) {
 		this.interviewid = interviewid;
 	}
 	public void setTechrating(int techrating) {
@@ -88,20 +56,4 @@ public class InterviewSchedulerDTO {
 	public void setFinalstatus(int finalstatus) {
 		this.finalstatus = finalstatus;
 	}
-	public void setEmployeeid(EmployeeEntity employeeid) {
-		this.employeeid = employeeid;
-	}
-	public void setCandidateIDinter(CandidateEntity candidateid) {
-		this.candidateid = candidateid;
-	}
-	public void setEmailIDinter(Set<PanelMemberEntity> emailIDinter) {
-		this.emailIDinter = emailIDinter;
-	}
-	@Override
-	public String toString() {
-		return "InterviewSchedulerEntity [interviewid=" + interviewid + ", techrating=" + techrating + ", hrrating="
-				+ hrrating + ", location=" + location + ", finalstatus=" + finalstatus + ", employeeid="
-				+ employeeid + ", candidateid=" + candidateid + ", emailIDinter=" + emailIDinter + "]";
-	}
-	
 }
