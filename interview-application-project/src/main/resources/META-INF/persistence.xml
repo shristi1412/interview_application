@@ -15,7 +15,7 @@
 <<<<<<< HEAD
 =======
 			<property name="hibernate.connection.username" value="InterviewTracking" />
-			<property name="hibernate.connection.password" value="12345" />
+			<property name="hibernate.connection.password" value="gopal" />
 
 >>>>>>> branch 'main' of https://github.com/shristi1412/interview_application
 			<property name="hibernate.connection.username" value="postgres" />

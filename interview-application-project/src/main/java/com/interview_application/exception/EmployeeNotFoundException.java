@@ -10,6 +10,6 @@ public class EmployeeNotFoundException extends Exception{
 	}
 	@Override
 	public String toString() {
-		return "Item not found " + this.Message;
+		return "Employee not found " + this.Message;
 	}
 }

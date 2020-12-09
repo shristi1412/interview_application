@@ -3,7 +3,7 @@ import com.interview_application.entity.InterviewSchedulerEntity;
 import com.interview_application.exception.InterviewNotFoundException;
 
 public interface CancelInterviewDAO {
-	InterviewSchedulerEntity findById(int interviewID) throws InterviewNotFoundException;
+	InterviewSchedulerEntity findById(String interviewID) throws InterviewNotFoundException;
 
 }
 

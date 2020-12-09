@@ -1,8 +1,8 @@
 package com.interview_application.dao;
 
-public class ViewInterviewMembersHRDAO {
+public class GiveRatingsDAO {
 
-	public ViewInterviewMembersHRDAO() {
+	public GiveRatingsDAO() {
 		// TODO Auto-generated constructor stub
 	}
 

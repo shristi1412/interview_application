@@ -29,6 +29,7 @@ public class ViewInterviewMembersDAOImpl implements ViewInterviewMembersDAO{
 		return interviewSchedulerEntity;
 	}
 	}
+<<<<<<< HEAD
 /*public List<CandidateEntity> viewAllUsers() throws NoDataFetchedException {
 
 List<CandidateEntity> list=null;
@@ -42,3 +43,7 @@ return list;
 
 
 
+=======
+
+}
+>>>>>>> f8365fa433a12bbb445d2f1e81c2eaeb39137c94

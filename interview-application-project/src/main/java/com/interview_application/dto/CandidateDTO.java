@@ -1,50 +1,37 @@
 package com.interview_application.dto;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-
-import com.interview_application.entity.InterviewSchedulerEntity;
 
 public class CandidateDTO {
 
-	private String candidateID;
+	private String candidateid;
+	@Column(name="candidatename")
 	private String candidatename;
+	@Column(name="location")
 	private String location;
+	@Column(name="designation")
 	private String designation;
+	@Column(name="qualification")
 	private String qualification;
+	@Column(name="experience")
 	private int experience;
+	@Column(name="noticeperiod")
 	private int noticeperiod;
+	@Column(name="primaryskills")
 	private String primaryskills;
-
+	@Column(name="secondaryskills")
 	private String secondaryskills;
-	private InterviewSchedulerEntity candidateInterview;
+	
+	
 	
 	public CandidateDTO() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public CandidateDTO(String candidateID, String candidatename, String location, String designation,
-			String qualification, int experience, int noticeperiod, String primaryskills, String secondaryskills, InterviewSchedulerEntity candidateInterview) {
-		super();
-		this.candidateID = candidateID;
-		this.candidatename = candidatename;
-		this.location = location;
-		this.designation = designation;
-		this.qualification = qualification;
-		this.experience = experience;
-		this.noticeperiod = noticeperiod;
-		this.primaryskills = primaryskills;
-		this.secondaryskills = secondaryskills;
-		this.candidateInterview = candidateInterview;
-	}
-	
-	public CandidateDTO(String candidateID, String candidatename, String location, String designation,
+	public CandidateDTO(String candidateid, String candidatename, String location, String designation,
 			String qualification, int experience, int noticeperiod, String primaryskills, String secondaryskills) {
 		super();
-		this.candidateID = candidateID;
+		this.candidateid = candidateid;
 		this.candidatename = candidatename;
 		this.location = location;
 		this.designation = designation;
@@ -54,8 +41,9 @@ public class CandidateDTO {
 		this.primaryskills = primaryskills;
 		this.secondaryskills = secondaryskills;
 	}
+	
 	public String getCandidateID() {
-		return candidateID;
+		return candidateid;
 	}
 	public String getCandidatename() {
 		return candidatename;
@@ -81,11 +69,8 @@ public class CandidateDTO {
 	public String getSecondaryskills() {
 		return secondaryskills;
 	}
-	public InterviewSchedulerEntity getCandidateInterview() {
-		return candidateInterview;
-	}
 	public void setCandidateID(String candidateID) {
-		this.candidateID = candidateID;
+		this.candidateid = candidateID;
 	}
 	public void setCandidatename(String candidatename) {
 		this.candidatename = candidatename;
@@ -111,16 +96,14 @@ public class CandidateDTO {
 	public void setSecondaryskills(String secondaryskills) {
 		this.secondaryskills = secondaryskills;
 	}
-	public void setCandidateInterview(InterviewSchedulerEntity candidateInterview) {
-		this.candidateInterview = candidateInterview;
-	}
 	@Override
 	public String toString() {
-		return "CandidateEntity [candidateID=" + candidateID + ", candidatename=" + candidatename + ", location="
+		return "CandidateEntity [candidateid=" + candidateid + ", candidatename=" + candidatename + ", location="
 				+ location + ", designation=" + designation + ", qualification=" + qualification + ", experience="
 				+ experience + ", noticeperiod=" + noticeperiod + ", primaryskills=" + primaryskills
-				+ ", secondaryskills=" + secondaryskills + ", candidateInterview=" + candidateInterview + "]";
+				+ ", secondaryskills=" + secondaryskills + "]";
 	}
+
 
 
 }

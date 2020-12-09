@@ -9,33 +9,26 @@ import javax.persistence.ManyToOne;
 import com.interview_application.entity.InterviewSchedulerEntity;
 
 public class EmployeeDTO {
-	private int employeeID;
+	private String employeeid;
+	@Column(name="name")
 	private String name;
-	private InterviewSchedulerEntity employeeInterview;
 	
 	public EmployeeDTO() {
 		super();
 	}
 
-	public EmployeeDTO(int employeeID, String name, InterviewSchedulerEntity employeeInterview) {
+	public EmployeeDTO(String employeeID, String name) {
 		super();
-		this.employeeID = employeeID;
-		this.name = name;
-		this.employeeInterview = employeeInterview;
-	}
-	
-	public EmployeeDTO(int employeeID, String name) {
-		super();
-		this.employeeID = employeeID;
+		this.employeeid = employeeID;
 		this.name = name;
 	}
 
-	public int getEmployeeID() {
-		return employeeID;
+	public String getEmployeeID() {
+		return employeeid;
 	}
 
-	public void setEmployeeID(int employeeID) {
-		this.employeeID = employeeID;
+	public void setEmployeeID(String employeeID) {
+		this.employeeid = employeeID;
 	}
 
 	public String getName() {
@@ -46,18 +39,9 @@ public class EmployeeDTO {
 		this.name = name;
 	}
 
-	public InterviewSchedulerEntity getEmployeeInterview() {
-		return employeeInterview;
-	}
-
-	public void setEmployeeInterview(InterviewSchedulerEntity employeeInterview) {
-		this.employeeInterview = employeeInterview;
-	}
 
 	@Override
 	public String toString() {
-		return "EmployeeEntity [employeeID=" + employeeID + ", name=" + name + ", employeeInterview="
-				+ employeeInterview + "]";
+		return "EmployeeEntity [employeeID=" + employeeid + ", name=" + name + "]";
 	}
-
 }

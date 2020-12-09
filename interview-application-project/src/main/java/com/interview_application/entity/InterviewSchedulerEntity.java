@@ -1,6 +1,7 @@
 
 	package com.interview_application.entity;
 
+<<<<<<< HEAD
 	import javax.persistence.CascadeType;
 	import javax.persistence.Column;
 	import javax.persistence.Entity;
@@ -10,6 +11,18 @@
 	import javax.persistence.JoinColumn;
 	import javax.persistence.OneToOne;
 	import javax.persistence.Table;
+=======
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+>>>>>>> f8365fa433a12bbb445d2f1e81c2eaeb39137c94
 
 	@Entity
 	@Table(name="interviewscheduler")
@@ -118,8 +131,8 @@
 public class InterviewSchedulerEntity {
 	@Id
 	@GeneratedValue
-	@Column(name="interviewID")
-	private int interviewID;
+	@Column(name="interviewid")
+	private String interviewid;
 	@Column(name="techrating")
 	private int techrating;
 	@Column(name="hrrating")
@@ -128,12 +141,14 @@ public class InterviewSchedulerEntity {
 	private int location;
 	@Column(name="finalstatus")
 	private int finalstatus;
-	@OneToMany(cascade={CascadeType.PERSIST, CascadeType.REMOVE}, 
-			fetch=FetchType.LAZY, mappedBy = "employeeInterview")
-	private Set<EmployeeEntity> employeeIDinter;
-	@OneToMany(cascade={CascadeType.PERSIST, CascadeType.REMOVE}, 
-			fetch=FetchType.LAZY, mappedBy = "candidateInterview")
-	private Set<CandidateEntity> cadidateIDinter;
+	@OneToOne(cascade={CascadeType.ALL},
+			fetch=FetchType.EAGER, optional = false)
+	@JoinColumn(name="employeeid")
+	private EmployeeEntity employeeIDinter;
+	@OneToOne(cascade={CascadeType.ALL},
+			fetch=FetchType.EAGER, optional = false)
+	@JoinColumn(name="candidateid")
+	private CandidateEntity candidateIDinter;
 	@OneToMany(cascade={CascadeType.PERSIST, CascadeType.REMOVE}, 
 			fetch=FetchType.LAZY, mappedBy = "emailIDInterview")
 	private Set<PanelMemberEntity> emailIDinter;
@@ -141,6 +156,12 @@ public class InterviewSchedulerEntity {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+<<<<<<< HEAD
+	public InterviewSchedulerEntity(String interviewid, int techrating, int hrrating, int location, int finalstatus,
+			EmployeeEntity employeeIDinter, CandidateEntity candidateIDinter, Set<PanelMemberEntity> emailIDinter) {
+=======
+	
+	
 	
 	
 	public InterviewSchedulerEntity(int interviewID, int techrating, int hrrating) {
@@ -150,28 +171,30 @@ public class InterviewSchedulerEntity {
 		this.hrrating = hrrating;
 	}
 
+public InterviewSchedulerEntity(int interviewID) {
+		super();
+		this.interviewID = interviewID;
+	}
+
+
+
 
 	public InterviewSchedulerEntity(int interviewID, int techrating, int hrrating, int location, int finalstatus,
 			Set<EmployeeEntity> employeeIDinter, Set<CandidateEntity> cadidateIDinter,
 			Set<PanelMemberEntity> emailIDinter) {
+>>>>>>> 023024268aa7d3577e94af6677f363ee585181b6
 		super();
-		this.interviewID = interviewID;
+		this.interviewid = interviewid;
 		this.techrating = techrating;
 		this.hrrating = hrrating;
 		this.location = location;
 		this.finalstatus = finalstatus;
 		this.employeeIDinter = employeeIDinter;
-		this.cadidateIDinter = cadidateIDinter;
+		this.candidateIDinter = candidateIDinter;
 		this.emailIDinter = emailIDinter;
 	}
-	@Override
-	public String toString() {
-		return "InterviewSchedulerEntity [interviewID=" + interviewID + ", techrating=" + techrating + ", hrrating="
-				+ hrrating + ", location=" + location + ", finalstatus=" + finalstatus + ", employeeIDinter="
-				+ employeeIDinter + ", cadidateIDinter=" + cadidateIDinter + ", emailIDinter=" + emailIDinter + "]";
-	}
-	public int getInterviewID() {
-		return interviewID;
+	public String getInterviewid() {
+		return interviewid;
 	}
 	public int getTechrating() {
 		return techrating;
@@ -185,17 +208,17 @@ public class InterviewSchedulerEntity {
 	public int getFinalstatus() {
 		return finalstatus;
 	}
-	public Set<EmployeeEntity> getEmployeeIDinter() {
+	public EmployeeEntity getEmployeeIDinter() {
 		return employeeIDinter;
 	}
-	public Set<CandidateEntity> getCadidateIDinter() {
-		return cadidateIDinter;
+	public CandidateEntity getCandidateIDinter() {
+		return candidateIDinter;
 	}
 	public Set<PanelMemberEntity> getEmailIDinter() {
 		return emailIDinter;
 	}
-	public void setInterviewID(int interviewID) {
-		this.interviewID = interviewID;
+	public void setInterviewid(String interviewid) {
+		this.interviewid = interviewid;
 	}
 	public void setTechrating(int techrating) {
 		this.techrating = techrating;
@@ -209,15 +232,28 @@ public class InterviewSchedulerEntity {
 	public void setFinalstatus(int finalstatus) {
 		this.finalstatus = finalstatus;
 	}
-	public void setEmployeeIDinter(Set<EmployeeEntity> employeeIDinter) {
+	public void setEmployeeIDinter(EmployeeEntity employeeIDinter) {
 		this.employeeIDinter = employeeIDinter;
 	}
-	public void setCadidateIDinter(Set<CandidateEntity> cadidateIDinter) {
-		this.cadidateIDinter = cadidateIDinter;
+	public void setCandidateIDinter(CandidateEntity candidateIDinter) {
+		this.candidateIDinter = candidateIDinter;
 	}
 	public void setEmailIDinter(Set<PanelMemberEntity> emailIDinter) {
 		this.emailIDinter = emailIDinter;
 >>>>>>> refs/remotes/origin/main
 	}
+<<<<<<< HEAD
+=======
+	@Override
+	public String toString() {
+		return "InterviewSchedulerEntity [interviewid=" + interviewid + ", techrating=" + techrating + ", hrrating="
+				+ hrrating + ", location=" + location + ", finalstatus=" + finalstatus + ", employeeIDinter="
+				+ employeeIDinter + ", candidateIDinter=" + candidateIDinter + ", emailIDinter=" + emailIDinter + "]";
+	}
+	
+	
+	
+	
+>>>>>>> f8365fa433a12bbb445d2f1e81c2eaeb39137c94
 
 
