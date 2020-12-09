@@ -22,14 +22,14 @@ public class CancelInterviewTest {
 	@Test
 	public void testInterviewSearchSuccess() throws InterviewNotFoundException {
 		logger.info("[START] testInterviewSearchSuccess()");
-		assertNotNull("Interview Found", updateInterviewSchedule.findItemById(""));
+		assertNotNull("Interview Found", updateInterviewSchedule.findItemById(123));
 		logger.info("[END] testInterviewSearchSuccess()");
 	}
 	
 	@Test(expected = InterviewNotFoundException.class)
 	public void testInterviewSearchFailed() throws InterviewNotFoundException {
 		logger.info("[START] testIntervewSearchFailed()");
-		updateInterviewSchedule.findItemById("int1");
+		updateInterviewSchedule.findItemById(12);
 		logger.info("[END] testCandidateSearchFailed()");
 	}
 

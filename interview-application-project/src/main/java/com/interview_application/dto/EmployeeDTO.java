@@ -31,7 +31,7 @@ public class EmployeeDTO {
 		return employeeid;
 	}
 
-	public void setEmployeeID(int employeeid) {
+	public void setEmployeeid(int employeeid) {
 		this.employeeid = employeeid;
 	}
 

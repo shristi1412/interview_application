@@ -1,34 +1,54 @@
 package com.interview_application.dto;
 
-import com.interview_application.entity.CandidateEntity;
-
-
 public class InterviewSchedulerDTO {
-	private String interviewid;
+	private int interviewid;
 	private int techrating;
 	private int hrrating;
-	private int location;
-	private int finalstatus;
-	
-	private CandidateEntity candidateIDinter;
-
+	private String location;
+	private String finalstatus;
 	public InterviewSchedulerDTO() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public InterviewSchedulerDTO(String interviewid, int techrating, int hrrating, int location, int finalstatus,
-			 CandidateEntity candidateIDinter ) {
+<<<<<<< HEAD
+	
+	
+	public InterviewSchedulerDTO(int interviewid) {
+		super();
+		this.interviewid = interviewid;
+	}
+	
+	
+
+
+	public InterviewSchedulerDTO(int interviewid, int techrating, int hrrating) {
+		super();
+		this.interviewid = interviewid;
+		this.techrating = techrating;
+		this.hrrating = hrrating;
+	}
+
+
+	public InterviewSchedulerDTO(int interviewid, int techrating, int hrrating, int location, int finalstatus) {
+=======
+	public InterviewSchedulerDTO(int interviewid, int techrating, int hrrating, String location, String finalstatus) {
+>>>>>>> db6fd83cca796b89527462f3d5d32e522f2dbc68
 		super();
 		this.interviewid = interviewid;
 		this.techrating = techrating;
 		this.hrrating = hrrating;
 		this.location = location;
 		this.finalstatus = finalstatus;
-		
-		this.candidateIDinter = candidateIDinter;
-	
 	}
-	public String getInterviewid() {
+	
+	
+	
+	@Override
+	public String toString() {
+		return "InterviewSchedulerEntity [interviewid=" + interviewid + ", techrating=" + techrating + ", hrrating="
+				+ hrrating + ", location=" + location + ", finalstatus=" + finalstatus + "]";
+	}
+	public int getInterviewid() {
 		return interviewid;
 	}
 	public int getTechrating() {
@@ -37,18 +57,13 @@ public class InterviewSchedulerDTO {
 	public int getHrrating() {
 		return hrrating;
 	}
-	public int getLocation() {
+	public String  getLocation() {
 		return location;
 	}
-	public int getFinalstatus() {
+	public String  getFinalstatus() {
 		return finalstatus;
-	}
-	
-	public CandidateEntity getCandidateIDinter() {
-		return candidateIDinter;
-	}
-	
-	public void setInterviewid(String interviewid) {
+	}	
+	public void setInterviewid(int interviewid) {
 		this.interviewid = interviewid;
 	}
 	public void setTechrating(int techrating) {
@@ -57,21 +72,10 @@ public class InterviewSchedulerDTO {
 	public void setHrrating(int hrrating) {
 		this.hrrating = hrrating;
 	}
-	public void setLocation(int location) {
+	public void setLocation(String  location) {
 		this.location = location;
 	}
-	public void setFinalstatus(int finalstatus) {
+	public void setFinalstatus(String  finalstatus) {
 		this.finalstatus = finalstatus;
-	}
-	
-	public void setCandidateIDinter(CandidateEntity candidateIDinter) {
-		this.candidateIDinter = candidateIDinter;
-	}
-	
-	@Override
-	public String toString() {
-		return "InterviewSchedulerEntity [interviewid=" + interviewid + ", techrating=" + techrating + ", hrrating="
-				+ hrrating + ", location=" + location + ", finalstatus=" + finalstatus + ", employeeIDinter="
-				 + ", candidateIDinter=" + candidateIDinter + ", emailIDinter=" ;
 	}
 }

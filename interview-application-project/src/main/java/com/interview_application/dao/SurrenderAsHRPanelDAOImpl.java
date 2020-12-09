@@ -3,7 +3,6 @@ package com.interview_application.dao;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-//import javax.persistence.Query;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -23,15 +22,23 @@ public class SurrenderAsHRPanelDAOImpl implements SurrenderAsHRPanelDAO{
 	
 	public EmployeeEntity findById(int employeeid) throws EmployeeNotFoundException{
 		
-		boolean flag = false;
-		
 		EmployeeEntity employeeEntity=entityManager.find(EmployeeEntity.class, employeeid);
 		if (employeeEntity == null) {
 			throw new EmployeeNotFoundException("Employee id "+employeeid+"not found");
 		}
 		employeeEntity.getPanelMemberEntity().setType(null);
-		flag = true;
 		return employeeEntity;
+	}
+	
+   public Boolean updateType(int employeeid) throws EmployeeNotFoundException{
+	   
+	   EmployeeEntity employeeEntity=entityManager.find(EmployeeEntity.class, employeeid);
+	   
+		if(employeeEntity.getPanelMemberEntity().getType() == null)
+			logger.info("Surrendered successfully "+ employeeEntity);
+		else
+			throw new EmployeeNotFoundException("Employee id "+employeeid+"not surrendered");
+		return true;
 	}
 
 }

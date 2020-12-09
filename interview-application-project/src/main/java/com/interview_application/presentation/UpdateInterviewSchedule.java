@@ -17,7 +17,7 @@ public class UpdateInterviewSchedule {
 	UpdateInterviewScheduleService itemService = new UpdateInterviewScheduleServiceImpl();
 	UpdateInterviewScheduleService itemService1 = new UpdateInterviewScheduleServiceImpl();
 	
-	public InterviewSchedulerEntity findItemById(String interviewid) throws InterviewNotFoundException {
+	public InterviewSchedulerEntity findItemById(int interviewid) throws InterviewNotFoundException {
 		logger.info("Finding interviewId: " + interviewid);
 		InterviewSchedulerEntity interviewSchedulerEntity = null;
 		try {
