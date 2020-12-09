@@ -1,0 +1,13 @@
+ERROR | 2020-12-08 12:09:04 | [main] spi.SqlExceptionHelper (SqlExceptionHelper.java:142) - FATAL: password authentication failed for user "InterviewTracking"
+ERROR | 2020-12-08 12:18:43 | [main] spi.SqlExceptionHelper (SqlExceptionHelper.java:142) - FATAL: password authentication failed for user "InterviewTracking"
+ERROR | 2020-12-08 12:26:11 | [main] spi.SqlExceptionHelper (SqlExceptionHelper.java:142) - FATAL: password authentication failed for user "postgre"
+ERROR | 2020-12-08 12:26:40 | [main] spi.SqlExceptionHelper (SqlExceptionHelper.java:142) - FATAL: password authentication failed for user "InterviewTracking"
+ERROR | 2020-12-09 11:13:07 | [main] spi.SqlExceptionHelper (SqlExceptionHelper.java:142) - FATAL: password authentication failed for user "postgres"
+ERROR | 2020-12-09 11:14:03 | [main] spi.SqlExceptionHelper (SqlExceptionHelper.java:142) - FATAL: password authentication failed for user "InterviewTracking"
+ERROR | 2020-12-09 11:17:00 | [main] spi.SqlExceptionHelper (SqlExceptionHelper.java:142) - FATAL: password authentication failed for user "InterviewTracking"
+ERROR | 2020-12-09 11:25:42 | [main] spi.SqlExceptionHelper (SqlExceptionHelper.java:142) - FATAL: password authentication failed for user "InterviewTracking"
+ERROR | 2020-12-09 11:35:12 | [main] spi.SqlExceptionHelper (SqlExceptionHelper.java:142) - FATAL: password authentication failed for user "InterviewTracking"
+ERROR | 2020-12-09 14:47:42 | [main] presentation.UpdateInterviewSchedule (UpdateInterviewSchedule.java:40) - RatingNotFoundException: Rating not found InterviewId: value
+ERROR | 2020-12-09 15:24:41 | [main] presentation.UpdateInterviewSchedule (UpdateInterviewSchedule.java:41) - RatingNotFoundException: Rating not found InterviewId: value
+ERROR | 2020-12-09 15:24:41 | [main] presentation.UpdateInterviewSchedule (UpdateInterviewSchedule.java:27) - InterviewNotFoundException: Interview not found InterviewId: int1
+ERROR | 2020-12-09 15:27:26 | [main] presentation.UpdateInterviewSchedule (UpdateInterviewSchedule.java:27) - InterviewNotFoundException: Interview not found InterviewId: int1

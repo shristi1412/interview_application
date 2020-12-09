@@ -10,13 +10,13 @@
             <PatternLayout pattern="%-5p | %d{yyyy-MM-dd HH:mm:ss} | [%t] %C{1} (%F:%L) - %m%n" />
         </Console>
         <!-- File Appender -->
-        <File name="FILE" fileName="${basePath}/shopping_app.log" append="true">
+        <File name="FILE" fileName="${basePath}/InterviewApplication.log" append="true">
         	<PatternLayout pattern="%-5p | %d{yyyy-MM-dd HH:mm:ss} | [%t] %C{2} (%F:%L) - %m%n" />
 		</File>    
     </Appenders>
     
     <Loggers>
-        <Logger name="com.cg.interview-project" level="trace" />
+        <Logger name="com.interview-application" level="trace" />
         <Root level="error">
             <AppenderRef ref="STDOUT" />
             <AppenderRef ref="FILE"></AppenderRef>

@@ -7,24 +7,33 @@ import javax.persistence.Persistence;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.interview_application.dao.AddPanelMemberDAOImpl;
+import com.interview_application.entity.EmployeeEntity;
 import com.interview_application.entity.PanelMemberEntity;
+import com.interview_application.exception.EmployeeNotFoundException;
 
-public class AddPanelMemberDAOImpl {
+public class AddPanelMemberDAOImpl implements AddPanelMemberDAO{
 	
 	private static Logger logger = LogManager.getLogger(AddPanelMemberDAOImpl.class.getName());	
 	private static EntityManager entityManager;
 
 	static {
-		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("ShopCartAppPU");
+		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("InterviewTracking");
 		entityManager = entityManagerFactory.createEntityManager();
 	}
 	
-	public PanelMemberEntity addPanelMember() throws NullPointerException {
-		PanelMemberEntity PMEntity = entityManager.find(PanelMemberEntity.class, "some var");
-		logger.info("Database returned ItemEntity: " + PMEntity);
-		if(PMEntity==null)
-			throw new NullPointerException("ItemId: " + "some var");
+	public PanelMemberEntity addPanelMember(String emailID, String location, String type, EmployeeEntity empID) throws EmployeeNotFoundException {
+		entityManager.getTransaction().begin();
+		EmployeeEntity emp = entityManager.find(EmployeeEntity.class, empID);
+		PanelMemberEntity PMEntity = new PanelMemberEntity(emailID, location, type, empID);			
+		if(emp==null) {
+			throw new EmployeeNotFoundException("ItemId: " + empID);
+		}
+		else {
+			logger.info("Employee with EMP ID : " + emp + " has been added as a Panel Member");
+			entityManager.persist(PMEntity);
+			logger.info("Adding Emp : " +PMEntity+" as a Panel member");
+		}
+		entityManager.getTransaction().commit();
 		return PMEntity;
 	}
 	

@@ -17,24 +17,24 @@ public class UpdateInterviewScheduleDAOImpl implements UpdateInterviewScheduleDA
 	private static EntityManager entityManager;
 	
 	static {
-		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("ShopCartAppPU");
+		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("InterviewTracking");
 		entityManager = entityManagerFactory.createEntityManager();
 	}
 	
-	public InterviewSchedulerEntity findById(String interviewId) throws InterviewNotFoundException {
-		InterviewSchedulerEntity interviewSchedulerEntity = entityManager.find(InterviewSchedulerEntity.class, interviewId);
-		logger.info("Database returned ItemEntity: " + interviewSchedulerEntity);
+	public InterviewSchedulerEntity findById(String interviewid) throws InterviewNotFoundException {
+		InterviewSchedulerEntity interviewSchedulerEntity = entityManager.find(InterviewSchedulerEntity.class, interviewid);
+		logger.info("Database returned InterviewSchedulerEntity: " + interviewSchedulerEntity);
 		if(interviewSchedulerEntity==null)
-			throw new InterviewNotFoundException("ItemId: " + interviewId);
+			throw new InterviewNotFoundException("InterviewId: " + interviewid);
 		return interviewSchedulerEntity;
 	}
 		
 		
 		public InterviewSchedulerEntity findById(int techrating, int hrrating) throws RatingNotFoundException {
-			InterviewSchedulerEntity interviewSchedulerEntity1 = entityManager.find(InterviewSchedulerEntity.class, techrating);
-			logger.info("Database returned ItemEntity: " + interviewSchedulerEntity1);
+			InterviewSchedulerEntity interviewSchedulerEntity1 = entityManager.find(InterviewSchedulerEntity.class, "value");
+			logger.info("Database returned InterviewSchedulerEntity: " + interviewSchedulerEntity1);
 			if(interviewSchedulerEntity1==null)
-				throw new RatingNotFoundException("ItemId: " + techrating);
+				throw new RatingNotFoundException("InterviewId: " + "value");
 			return interviewSchedulerEntity1;
 	}
 }

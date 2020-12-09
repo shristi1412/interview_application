@@ -1,11 +1,11 @@
 package com.interview_application.service;
 
 import com.interview_application.dto.PanelMemberDTO;
+import com.interview_application.entity.EmployeeEntity;
+import com.interview_application.exception.EmployeeNotFoundException;
 
-public class AddPanelMemberService {
+public interface AddPanelMemberService {
+	PanelMemberDTO addPanelMember(String emailID, String location, String type, EmployeeEntity empID) throws EmployeeNotFoundException;
 
-	public static void main(String[] args) {
-		PanelMemberDTO a = new PanelMemberDTO();
-	}
 
 }
