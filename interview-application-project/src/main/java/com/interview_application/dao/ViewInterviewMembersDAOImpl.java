@@ -9,6 +9,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.interview_application.entity.CandidateEntity;
+import com.interview_application.entity.InterviewSchedulerEntity;
+import com.interview_application.exception.InterviewNotFoundException;
 import com.interview_application.exceptions.CandidateNotFoundException;
 
 public abstract class ViewInterviewMembersDAOImpl implements ViewInterviewMembersDAO{
@@ -19,12 +21,12 @@ public abstract class ViewInterviewMembersDAOImpl implements ViewInterviewMember
 		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("ShopCartAppPU");
 		entityManager = entityManagerFactory.createEntityManager();
 	}
-	public CandidateEntity findById(int candidateID) throws CandidateNotFoundException {
-		CandidateEntity viewcandidateEntity = entityManager.find(CandidateEntity.class, candidateID);
-		logger.info("Database returned CandidateEntity: " + viewcandidateEntity);
-		if(viewcandidateEntity==null)
-			throw new CandidateNotFoundException("CandidateId: " + candidateID);
-		return viewcandidateEntity;
+	public InterviewSchedulerEntity findById(int interviewID) throws InterviewNotFoundException {
+		InterviewSchedulerEntity interviewSchedulerEntity = entityManager.find(InterviewSchedulerEntity.class, interviewID);
+		logger.info("Database returned CandidateEntity: " + interviewSchedulerEntity);
+		if(interviewSchedulerEntity==null)
+			throw new InterviewNotFoundException("CandidateId: " + interviewID);
+		return interviewSchedulerEntity;
 	}
 	}
 	
