@@ -21,7 +21,7 @@ public class AddPanelMemberDAOImpl implements AddPanelMemberDAO{
 		entityManager = entityManagerFactory.createEntityManager();
 	}
 	
-	public PanelMemberEntity addPanelMember(String emailID, String location, String type, String empID) throws EmployeeNotFoundException {
+	public PanelMemberEntity addPanelMember(String emailID, String location, String type, EmployeeEntity empID) throws EmployeeNotFoundException {
 		entityManager.getTransaction().begin();
 		EmployeeEntity emp = entityManager.find(EmployeeEntity.class, empID);
 		PanelMemberEntity PMEntity = new PanelMemberEntity(emailID, location, type, empID);			

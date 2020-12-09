@@ -9,13 +9,28 @@ import com.interview_application.service.SearchEmployeeService;
 import com.interview_application.service.SearchEmployeeServiceImpl;
 
 public class SearchEmployeeController {
+	//BY ID
 	private static Logger logger = LogManager.getLogger(SearchEmployeeController.class.getName());
 	SearchEmployeeService empService = new SearchEmployeeServiceImpl();
 	public EmployeeDTO searchById(String empID) throws EmployeeNotFoundException {
+		empID = empID.toLowerCase();
 		logger.info("Finding employee with Employee ID : " + empID);
 		EmployeeDTO emp = null;
 		try {
 			emp = empService.searchById(empID);
+		}
+		catch(Exception e) {
+			logger.error("EmployeeNotFoundException: " + e);
+			throw new EmployeeNotFoundException(e.getMessage());
+		}
+		return emp;
+	}
+	//BY Name
+	public EmployeeDTO searchByName(String name) throws EmployeeNotFoundException {
+		logger.info("Finding employee with Employee ID : " + name);
+		EmployeeDTO emp = null;
+		try {
+			emp = empService.searchByName(name);
 		}
 		catch(Exception e) {
 			logger.error("EmployeeNotFoundException: " + e);
