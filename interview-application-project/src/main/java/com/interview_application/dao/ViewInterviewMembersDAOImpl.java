@@ -13,7 +13,7 @@ import com.interview_application.entity.InterviewSchedulerEntity;
 import com.interview_application.exception.InterviewNotFoundException;
 import com.interview_application.exceptions.CandidateNotFoundException;
 
-public abstract class ViewInterviewMembersDAOImpl implements ViewInterviewMembersDAO{
+public class ViewInterviewMembersDAOImpl implements ViewInterviewMembersDAO{
 	private static Logger logger = LogManager.getLogger(ViewInterviewMembersDAOImpl.class.getName());	
 	private static EntityManager entityManager;
 	
@@ -25,11 +25,19 @@ public abstract class ViewInterviewMembersDAOImpl implements ViewInterviewMember
 		InterviewSchedulerEntity interviewSchedulerEntity = entityManager.find(InterviewSchedulerEntity.class, interviewID);
 		logger.info("Database returned CandidateEntity: " + interviewSchedulerEntity);
 		if(interviewSchedulerEntity==null)
-			throw new InterviewNotFoundException("CandidateId: " + interviewID);
+			throw new InterviewNotFoundException("Interviewid: " + interviewID);
 		return interviewSchedulerEntity;
 	}
 	}
-	
+/*public List<CandidateEntity> viewAllUsers() throws NoDataFetchedException {
+
+List<CandidateEntity> list=null;
+Query query = entityManager.createQuery("SELECT users from RegisterUserEntity users");//JPQL
+list = query.getResultList();//Fire JPQL query
+if(list==null)
+	throw new NoDataFetchedException("No Entry in Database");	
+return list;
+}*/
 
 
 
