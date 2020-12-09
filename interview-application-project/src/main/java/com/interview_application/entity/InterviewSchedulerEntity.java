@@ -16,7 +16,7 @@ public class InterviewSchedulerEntity {
 	@Id
 	//@GeneratedValue
 	@Column(name="interviewid")
-	private String interviewid;
+	private int interviewid;
 	@Column(name="techrating")
 	private int techrating;
 	@Column(name="hrrating")
@@ -36,18 +36,18 @@ public class InterviewSchedulerEntity {
 		// TODO Auto-generated constructor stub
 	}
 
-public InterviewSchedulerEntity(String interviewid, int techrating, int hrrating) {
+public InterviewSchedulerEntity(int interviewid, int techrating, int hrrating) {
 		super();
 		this.interviewid= interviewid;
 		this.techrating = techrating;
 		this.hrrating = hrrating;
 	}
 
-public InterviewSchedulerEntity(String interviewid) {
+public InterviewSchedulerEntity(int interviewid) {
 		super();
 		this.interviewid= interviewid;
 	}
-public InterviewSchedulerEntity(String interviewid, CandidateEntity candidateIDinter,int techrating, int hrrating, String location, String finalstatus)
+public InterviewSchedulerEntity(int interviewid, CandidateEntity candidateIDinter,int techrating, int hrrating, String location, String finalstatus)
 	 {
 
 		super();
@@ -59,7 +59,7 @@ public InterviewSchedulerEntity(String interviewid, CandidateEntity candidateIDi
 		this.finalstatus = finalstatus;
 	
 	}
-	public String getInterviewid() {
+	public int getInterviewid() {
 		return interviewid;
 	}
 
@@ -80,7 +80,7 @@ public InterviewSchedulerEntity(String interviewid, CandidateEntity candidateIDi
 	}
 	
 
-	public void setInterviewid(String interviewid) {
+	public void setInterviewid(int interviewid) {
 		this.interviewid = interviewid;
 	}
 

@@ -25,28 +25,28 @@ public class UpdateInterviewScheduleTest {
 	@Test
 	public void testInterviewSearchSuccess() throws InterviewNotFoundException {
 		logger.info("[START] testInterviewSearchSuccess()");
-		assertNotNull("Interview Found", updateInterviewSchedule.findItemById("int1"));
+		assertNotNull("Interview Found", updateInterviewSchedule.findItemById(11));
 		logger.info("[END] testInterviewSearchSuccess()");
 	}
 	
 	@Test(expected = InterviewNotFoundException.class)
 	public void testInterviewSearchFailed() throws InterviewNotFoundException {
 		logger.info("[START] testIntervewSearchFailed()");
-		updateInterviewSchedule.findItemById("int1");
+		updateInterviewSchedule.findItemById(11);
 		logger.info("[END] testCandidateSearchFailed()");
 	}
 	
-	/*@Test
+	@Test
 	public void testRatingSuccess() throws RatingNotFoundException {
 		logger.info("[START] testRatingSuccess()");
 		assertNotNull("Rating Found", updateInterviewSchedule.findItemById(1,0));
 		logger.info("[END] testRatingSuccess()");
 	}
 	
-	@Test(expected = InterviewNotFoundException.class)
-	public void testInterviewSearchFailed() throws InterviewNotFoundException {
+	@Test(expected = RatingNotFoundException.class)
+	public void testRatingFailed() throws RatingNotFoundException {
 		logger.info("[START] testIntervewSearchFailed()");
-		updateInterviewSchedule.findItemById(1);
+		updateInterviewSchedule.findItemById(1,6);
 		logger.info("[END] testCandidateSearchFailed()");
-	}*/
+	}
 }

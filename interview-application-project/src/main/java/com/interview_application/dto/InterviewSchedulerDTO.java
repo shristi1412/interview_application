@@ -10,6 +10,24 @@ public class InterviewSchedulerDTO {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
+	
+	public InterviewSchedulerDTO(int interviewid) {
+		super();
+		this.interviewid = interviewid;
+	}
+	
+	
+
+
+	public InterviewSchedulerDTO(int interviewid, int techrating, int hrrating) {
+		super();
+		this.interviewid = interviewid;
+		this.techrating = techrating;
+		this.hrrating = hrrating;
+	}
+
+
 	public InterviewSchedulerDTO(int interviewid, int techrating, int hrrating, int location, int finalstatus) {
 		super();
 		this.interviewid = interviewid;
