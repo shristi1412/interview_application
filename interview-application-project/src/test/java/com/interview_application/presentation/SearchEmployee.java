@@ -1,4 +1,4 @@
-package SearchEmployee;
+package com.interview_application.presentation;
 
 import static org.junit.Assert.assertNotNull;
 
@@ -20,32 +20,43 @@ public class SearchEmployee {
 	}
 	@Test
 	public void testIDSimple() throws EmployeeNotFoundException{
-		logger.info("[START] testItemSearchSuccess()");
+		logger.info("[START] testIDSimple()");
 		assertNotNull("Employee Found", searchEmployeeController.searchById("emp85015"));
-		logger.info("[END] testItemSearchSuccess()");
+		logger.info("[END] testIDSimple()");
 	}
 	@Test
 	public void testIDIncorrect() throws EmployeeNotFoundException{
-		logger.info("[START] testItemSearchSuccess()");
+		logger.info("[START] testIDIncorrect()");
 		assertNotNull("Employee Found", searchEmployeeController.searchById("emp00000"));
-		logger.info("[END] testItemSearchSuccess()");
+		logger.info("[END] testIDIncorrect()");
 	}
 	@Test
 	public void testNameSimple() throws EmployeeNotFoundException{
-		logger.info("[START] testItemSearchSuccess()");
+		logger.info("[START] testNameSimple()");
 		assertNotNull("Item Found", searchEmployeeController.searchByName("Ramesh"));
-		logger.info("[END] testItemSearchSuccess()");
+		logger.info("[END] testNameSimple()");
 	}
 	@Test
 	public void testNameIncorrect() throws EmployeeNotFoundException{
-		logger.info("[START] testItemSearchSuccess()");
-		assertNotNull("Item Found", searchEmployeeController.searchByName("Atul"));
-		logger.info("[END] testItemSearchSuccess()");
+		logger.info("[START] testNameIncorrect()");
+		try {
+			assertNotNull("Item Found", searchEmployeeController.searchByName("Atul"));
+		}
+		catch(EmployeeNotFoundException e) {
+			logger.info("Employee Name is incorrect");
+		}
+		logger.info("[END] testNameIncorrect()");
 	}
 	@Test
-	public void testIDBlank() throws EmployeeNotFoundException{
-		logger.info("[START] testItemSearchSuccess()");
+	public void testIDCaseInsensitive() throws EmployeeNotFoundException{
+		logger.info("[START] testIDCaseInsensitive()");
 		assertNotNull("Item Found", searchEmployeeController.searchById("eMp85015"));
-		logger.info("[END] testItemSearchSuccess()");
+		logger.info("[END] testIDCaseInsensitive()");
+	}
+	@Test
+	public void testInvalidIDFormat() throws EmployeeNotFoundException{
+		logger.info("[START] testInvalidIDFormat()");
+		assertNotNull("Item Found", searchEmployeeController.searchById("ABC015"));
+		logger.info("[END] testInvalidIDFormat()");
 	}
 }

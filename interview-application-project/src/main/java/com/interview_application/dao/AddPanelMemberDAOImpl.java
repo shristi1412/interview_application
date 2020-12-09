@@ -20,20 +20,21 @@ public class AddPanelMemberDAOImpl implements AddPanelMemberDAO{
 		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("InterviewTracking");
 		entityManager = entityManagerFactory.createEntityManager();
 	}
-	
+	public PanelMemberEntity PMEntity;
 	public PanelMemberEntity addPanelMember(String emailID, String location, String type, EmployeeEntity empID) throws EmployeeNotFoundException {
-		entityManager.getTransaction().begin();
-		EmployeeEntity emp = entityManager.find(EmployeeEntity.class, empID);
-		PanelMemberEntity PMEntity = new PanelMemberEntity(emailID, location, type, empID);			
+		EmployeeEntity emp = entityManager.find(EmployeeEntity.class, empID.getEmployeeID());
+		System.out.println(emp);
 		if(emp==null) {
-			throw new EmployeeNotFoundException("ItemId: " + empID);
+			throw new EmployeeNotFoundException("Id: " + empID);
 		}
 		else {
+			entityManager.getTransaction().begin();
+			PMEntity = new PanelMemberEntity(emailID, location, type, empID, null);			
 			logger.info("Employee with EMP ID : " + emp + " has been added as a Panel Member");
 			entityManager.persist(PMEntity);
 			logger.info("Adding Emp : " +PMEntity+" as a Panel member");
+			entityManager.getTransaction().commit();
 		}
-		entityManager.getTransaction().commit();
 		return PMEntity;
 	}
 	
